@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			.mui-content{
+				overflow:hidden;
+				background-color:#161A1D;
+				padding-top: 45px;
+			}
+		</style>
+	</head>
+
+	<body>
+		 
+		<header class="mui-bar mgoo-header" style="background-color: #1B1F22;">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">信息确认</h1>
+		</header> 
+		<div class="mui-content">
+		    <div id="divSubtitle" class="mgoo-subtitle"></div>  
+		    <div id="" class="mgoo-device-add-confirm-content">
+		    	<div style="padding-left: 30px;padding-top: 35px;">
+		    	 	<lable>绑定IMEI号：</lable><span id="spanSerialNumber" style="color: #828282;"></span>
+		    	</div>
+		    	<div class="mgoo-usercenter-line" style=" width: 90%;margin-left:5%;margin-top: 10px;"> </div>
+		    	<div style="padding-left: 30px;padding-top: 10px;">
+		    		<lable>绑 定 VC码：</lable><span id="spanVCCode" style="color: #828282;"></span>
+		    		<!--<input type="text" name="" id="" value="123456" style="width: 120px;"/> -->
+		    	</div>
+		    </div>
+		    
+		    <div id="" style="border-bottom: 1px solid #00A5AF;height: 60px;color: white;text-align: center;padding-top: 10px;">
+		   		<label>为确保正常使用，请仔细核对IMEI号和VC码</label>	
+		    </div>
+		    
+		    <div id="" class="mgoo-device-manage-add-button-div" style="position: absolute;bottom: 25px; width: 100%;"> 
+		    	<button type="button" id="btnConfirm" class="mui-btn mui-btn-blue mui-btn-block">确认添加</button> 
+		    </div>
+		</div> 
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript">
+			mui.init();
+			var device = {imei:'',vc:''};
+			mui.ready(function(){
+				document.getElementById('btnConfirm').addEventListener('tap',function () {
+				    addDevice();
+				})
+			});
+			mui.plusReady(function () {
+				var _back = mui.back;
+				mui.back = function(event) {
+					plus.nativeUI.showWaiting("正在加载...");
+					var mapPage = plus.webview.getWebviewById("usercenter/device-add.html");
+					mui.fire(mapPage,"onShow",{});  
+					_back();
+				};
+			});
+			document.addEventListener("onShow",function(e){
+				device.imei = e.detail.imei;
+				var vc = e.detail.vc;
+				console.log(vc);
+				var docvc = document.getElementById("spanVCCode");
+				if (e.detail.status == "input" && vc != '') {
+					docvc.innerText="";
+					mui.prompt('该设备需要输入VC码才能继续.','请输入VC码','提示',['确  认'],function (e) {
+						console.log(e.index);
+				        if (e.index == 0) { 
+				        	var inputvc = document.querySelector('.mui-popup-input input').value;
+				        	if (vc == inputvc) {
+				        		device.vc = vc;
+				        		docvc.innerText = vc;
+				        	}else{
+				        		mui.toast("VC码输入错误！");
+				        		return false;
+				        	}
+				        }
+			   		},'div'); 
+			   		document.querySelector('.mui-popup-input input').type="number";
+				}else if(e.detail.status == "scan"){ 
+					if (e.detail.vc == '') { 
+						docvc.innerText = "该设备没有VC码";
+					}else{
+						docvc.innerText = e.detail.vc;
+					}
+				} 
+				document.getElementById("spanSerialNumber").innerText = e.detail.imei;
+			});
+			function addDevice () { 
+				var state = app.getState();
+				var userid = state.userid;
+				var docvc = document.getElementById("spanVCCode");
+				var a = new ajaxPar("AddDevice");
+				a.ajax({
+					url:"/ajax/DevicesAjax.asmx?op=AddDevice",
+					data:{ imei: device.imei , vccode: docvc.innerText , userid: userid, groupid: -1 },
+					success:function (res) {
+						mui.toast(res.Message);
+						console.log(res.StatusCode);
+						if (res.StatusCode == 200) {
+							console.log("跳转");
+							openWindow("../main.html");
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

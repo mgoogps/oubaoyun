@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>报警设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css"> 
+			.mui-content{
+				background-color: #000000;
+				background: url(../images/message/settings/msg_setting_bg.png);background-size:100% 100% ;
+				width: 100%;	
+				padding-top: 90px;
+			}
+			#divMessageType{
+				width: 100%;
+			}
+			.mui-row{
+				padding-left: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-transparent mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mgoo-foot-color">报警设置</h1>
+		</header>
+		<div class="mui-content mgoo-foot-color-white">
+			<div class="mui-row">
+				<div class="mui-col-xs-3">
+					<strong>接收通知</strong> 
+				</div>
+				<div class="mui-col-xs-5">
+					<span style="float: left;margin-left: 20px;">声音</span>
+					<div class="mgoo-message-setting-switch" id="divAudio">
+		    			<img src="../images/message/settings/off.png" style="height: 20px;width: 50%;float: left;visibility:hidden;"/>
+		    			<img src="../images/message/settings/on.png" style="height: 20px;width: 50%;float: left;"/>
+		    		</div>  
+				</div>
+				<div class="mui-col-xs-4">
+					<span style="float: left;">震动</span>
+		    		<div class="mgoo-message-setting-switch" id="divShock">
+		    			<img src="../images/message/settings/off.png" style="height: 20px;width: 50%;float: left;visibility:hidden;"/>
+		    			<img src="../images/message/settings/on.png" style="height: 20px;width: 50%;float: left;"/>
+		    		</div> 
+				</div>
+			</div>
+			<br />
+			<strong style="padding-left: 30px;">接收报警类型</strong>
+			<div class="mui-row" id="divMessage">
+				<!--<div class="mui-col-xs-6">
+					<div class="mgoo-message-setting-checkbox">  
+	    				<label>(无线)拆除报警</label> 
+	    			</div> 
+				</div>
+				<div class="mui-col-xs-6">
+					<div check="check" class="mgoo-message-setting-checkbox mgoo-checkbox-selected">  
+	    				<label>(有线)拆除报警1</label> 
+	    			</div> 
+				</div>
+				<div class="mui-col-xs-6">
+					<div class="mgoo-message-setting-checkbox">  
+	    				<label>基站屏蔽 报警</label> 
+	    			</div> 
+				</div>
+				<div class="mui-col-xs-6">
+					<div class="mgoo-message-setting-checkbox">  
+	    				<label>基站屏蔽报警</label> 
+	    			</div> 
+				</div> -->
+			</div>
+			<br />
+			<strong style="padding-left: 30px;">接收报警时段</strong>
+			<div class="mui-row" id="divMessagePeriod">
+				<div class="mui-col-xs-12">
+					<div class="mgoo-message-setting-checkbox" name="period" value="1"> 
+		    				<label>全天接收(00:00-23:59) </label>  
+		    		</div>
+				</div>
+				<div class="mui-col-xs-12">
+					<div class="mgoo-message-setting-checkbox" name="period" value="2">  
+		    				<label>晚上接收(20:00-07:59)  </label>  
+		    		</div> 
+				</div>
+				<div class="mui-col-xs-12">
+					<div class="mgoo-message-setting-checkbox" name="period" value="3">  
+		    				<label>白天接收(08:00-19:59)  </label>  
+		    		</div>  
+				</div>
+			</div>
+			<br />
+			<!--<strong style="padding-left: 30px;">震动报警灵敏度设置</strong>
+			<div class="mui-row" id="divMessageKeen">
+				<div class="mui-col-xs-4">
+					<div class="mgoo-message-setting-checkbox" name="keen" value ="1">  
+		    				<label>灵敏度高</label>  
+		    		</div>
+				</div>
+				<div class="mui-col-xs-4">
+					<div class="mgoo-message-setting-checkbox" name="keen" value ="2">  
+		    				<label>灵敏度中</label>  
+		    		</div>
+				</div>
+				<div class="mui-col-xs-4">
+					<div class="mgoo-message-setting-checkbox" name="keen" value ="3">  
+		    				<label>灵敏度低</label>  
+		    		</div>
+				</div> 	
+			</div> -->
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/devices/message.js" ></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true
+			});
+			mui.plusReady(function () {
+				GetUsersConfig();
+				GetMessageTypeList();
+				var check = new checkbox(".mgoo-message-setting-checkbox",function(e,c){
+					var name = e.getAttribute("name");  
+					if (name == "message") {
+						SetPushMsg(check.getValue("#divMessage .mgoo-message-setting-checkbox"));	
+					} 
+				},{},function (e,c) {
+					var name = e.getAttribute("name");  
+					if (name == "period") {
+					  	var cur = mui('#divMessagePeriod .mgoo-checkbox-selected')[0]; 
+					    if (cur == e) {
+					    	return false;
+					    }
+						mui('#divMessagePeriod .mgoo-message-setting-checkbox').each(function (index,element) {
+							if (element != e) {
+								setCheckBoxSelected(element,"");
+							} 
+						});
+					}else if (name == "keen") {
+						var cur = mui('#divMessageKeen .mgoo-checkbox-selected')[0]; 
+					    if (cur == e) {
+					    	return false;
+					    }
+						mui('#divMessageKeen .mgoo-message-setting-checkbox').each(function (index,element) {
+							if (element != e) { 
+								setCheckBoxSelected(element,"");
+							}
+						});
+					}
+					return true;
+				});
+
+				mui('.mgoo-message-setting-switch').each(function (index,element) {
+					element.addEventListener("tap",function () {
+						setSwitch(element);
+						/*var imgs = element.getElementsByTagName("img")
+						if (imgs[0].style.visibility == "hidden") {
+							imgs[1].style.visibility = "hidden";
+							imgs[0].style.visibility= "visible";
+						}else	{
+							imgs[0].style.visibility = "hidden";
+							imgs[1].style.visibility= "visible";
+						}*/
+						 
+					})
+				})
+			});
+			
+		</script>
+	</body>
+
+</html>

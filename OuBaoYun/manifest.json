@@ -1,0 +1,1569 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "com.mgoogps.oubaoyun",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "欧宝云卫士",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.0.40",/*应用版本名称*/
+		"code": "83"
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "张飞鸿",/*开发者名称*/
+		"email": "zfh.code@gmail.com",/*开发者邮箱地址*/
+		"url": "http://www.mgoo.net"
+	},
+	"permissions": {
+		
+
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+
+
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+
+
+		
+
+
+
+
+		"UI": {},
+
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		
+
+
+
+
+
+
+		"Webview": {},
+		"NativeUI": {},
+
+		
+		"Device": {},
+
+		"Barcode": {},
+		"Push": {},
+		
+		"Camera":{},"Navigator":{},"Gallery":{},"Geolocation":{}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": true,
+			"delay": "0"
+		},
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {
+				"push": {
+					"mipush": {
+						"appid_android": "2882303761517549051",
+						"appkey_android": "5601754993051",
+						"appid_ios": "2882303761517549537",
+						"appkey_ios": "5361754950537"
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": ["<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_WAP_PUSH\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+			},
+			"orientation": ["portrait-primary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png",/*iPhone普通屏幕程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png",/*iPhone高分屏程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png",
+						"retina8": "unpackage/res/icons/180x180.png",
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "D:/MgooGps/欧宝云卫士文件/png/640X1136.png",
+						"retina55": "D:/MgooGps/欧宝云卫士文件/png/1242X2208.png",
+						"retina47": "D:/MgooGps/欧宝云卫士文件/png/750X1334.png",
+						"retina55l": "D:/MgooGps/欧宝云卫士文件/png/2208X1242.png"
+					},
+					"ipad": {
+						"portrait": "D:/MgooGps/欧宝云卫士文件/png/768X1004.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "D:/MgooGps/欧宝云卫士文件/png/1536X2008.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "D:/MgooGps/欧宝云卫士文件/png/1024X748.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "D:/MgooGps/欧宝云卫士文件/png/2048X1496.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "D:/MgooGps/欧宝云卫士文件/png/768X1024.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "D:/MgooGps/欧宝云卫士文件/png/1536X2048.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "D:/MgooGps/欧宝云卫士文件/png/1024X768.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "D:/MgooGps/欧宝云卫士文件/png/2048X1536.png"
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "D:/MgooGps/欧宝云卫士文件/png/480X800.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "D:/MgooGps/欧宝云卫士文件/png/720X1280.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "D:/MgooGps/欧宝云卫士文件/png/1080X1920.png"
+				}
+			},
+			"debug": false
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"setting.html": {
+				"href": "setting.html",
+				"resources": [
+					"js/mui.min.js",
+					"js/mui.view.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js",
+					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+					"libs/easymob-webim-sdk/json2.js",
+					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+					"js/feedback.js",
+					"js/feedback-page.js",
+					"js/mui.locker.js",
+					"js/app.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/feedback-page.css",
+					"images/iconfont-tianjia.png"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 1
+			},
+			"main.html": {
+				"href": "main.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"js/app.js",
+					"images/main/BG01.png",
+					"css/mgoo.css",
+					"images/main/images/BG_01.gif",
+					"images/main/images/BG_02.gif",
+					"images/main/banner/banner2.png",
+					"images/main/banner/banner4.png",
+					"images/main/banner/banner3.png",
+					"images/main/banner/banner1.png",
+					"images/main/images/BG_04.gif",
+					"images/main/button/monitor.png",
+					"images/main/button/statistics.png",
+					"images/main/button/status-move.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/service.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_07.gif",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_04.png",
+					"images/main/images/BG_01.png",
+					"images/main/button/gjhf.png",
+					"images/main/button/jiefang.png",
+					"images/main/images/BG_08.png",
+					"images/main/button/dzwl.png",
+					"images/main/button/ssgz.png",
+					"images/main/button/sbxx.png",
+					"images/main/button/shache.png",
+					"fonts/mui-icons-extra.ttf",
+					"monitor/monitor-main.html",
+					"css/icons-extra.css",
+					"/images/main/images/BG_01.png",
+					"js/basic/main.js",
+					"js/basic/public.js",
+					"js/basic/update.js",
+					"images/main/images/offline.png",
+					"images/main/images/online.png",
+					"images/main/images/expired.png",
+					"js/basic/ajax.js",
+					"images/main/button/status-offline.png",
+					"images/main/button/status-still.png",
+					"images/main/button/shefang.png",
+					"images/main/button/weijihuo2.png",
+					"images/main/button/fenceon1.png",
+					"images/main/button/fenceon2.png",
+					"images/main/button/status-notused.png",
+					"images/main/button/status-arrears.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/content_status_bg.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"setting.html",
+					"service/service-main.html",
+					"usercenter/usercenter-main.html",
+					"statistics/statistics-main.html",
+					"monitor/history.html",
+					"monitor/nav_transparent.html",
+					"monitor/message-list.html",
+					"monitor/tracking.html",
+					"monitor/device-info.html",
+					"service-main.html",
+					"statistics-main.html",
+					"usercenter-main.html",
+					"usercenter/device-add.html",
+					"monitor/message-view.html"
+				],
+				"priority": 1
+			},
+			"unlock.html": {
+				"href": "unlock.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"js/mui.locker.js",
+					"js/app.js"
+				],
+				"refer": [
+					"login.html",
+					"main.html"
+				],
+				"priority": 0
+			},
+			"forget_password.html": {
+				"href": "forget_password.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/app.js",
+					"images/login/yzm.png",
+					"css/mgoo.css",
+					"images/usercenter/devicemanage/next_button.png",
+					"js/basic/public.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"priority": 1,
+				"refer": [
+					"login1.html"
+				]
+			},
+			"reg.html": {
+				"href": "reg.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/app.js",
+					"css/mgoo.css",
+					"images/login/yzm.png",
+					"reg.html",
+					"images/login/line2.png",
+					"images/button-reg.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"login.html"
+				],
+				"priority": 3
+			},
+			"login.html": {
+				"href": "login.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/style.css",
+					"js/mui.min.js",
+					"js/mui.enterfocus.js",
+					"js/app.js",
+					"images/qihoo.png",
+					"images/qq.png",
+					"images/sinaweibo.png",
+					"images/weixin.png",
+					"js/basic/md5.js",
+					"js/basic/update.js",
+					"images/login-logo.png",
+					"images/button-login.png",
+					"images/button-reg.png",
+					"js/basic/public.js"
+				],
+				"refer": [
+					"unlock.html",
+					"forget_password.html",
+					"main.html",
+					"reg.html",
+					"login1.html"
+				],
+				"priority": 0
+			},
+			"monitor/monitor-main.html": {
+				"resources": [
+					"images/main/banner/banner4.png",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_04.png",
+					"images/main/button/gjhf.png",
+					"images/main/button/jiefang.png",
+					"images/main/images/BG_08.png",
+					"images/main/button/dzwl.png",
+					"images/main/banner/banner1.png",
+					"images/main/button/ssgz.png",
+					"images/main/button/status-move.png",
+					"images/main/images/BG_05.png",
+					"images/main/banner/banner2.png",
+					"images/main/button/sbxx.png",
+					"images/main/banner/banner3.png",
+					"images/main/button/shache.png",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mgoo.css",
+					"images/main/button/fenceon1.png",
+					"js/app.js",
+					"js/basic/main.js",
+					"js/basic/ajax.js",
+					"js/basic/public.js",
+					"js/basic/update.js",
+					"images/main/button/shefang.png",
+					"images/main/button/weijihuo2.png",
+					"images/main/button/fenceon2.png",
+					"images/main/button/status-still.png",
+					"images/main/images/offline.png",
+					"images/main/images/online.png",
+					"images/main/images/expired.png",
+					"images/main/button/status-arrears.png",
+					"images/main/button/status-offline.png",
+					"images/main/images/notused.png",
+					"images/loading.gif",
+					"/images/public/popup_bg.png",
+					"images/public/popup_bg.png",
+					"/images/public/button5.png",
+					"images/public/button5.png",
+					"images/main/images/driving.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/line4.png",
+					"images/main/button/status-notused.png",
+					"fonts/mui.ttf",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"monitor/tracking.html",
+					"monitor/history.html",
+					"monitor/device-info.html",
+					"usercenter/device-add.html"
+				],
+				"priority": 0
+			},
+			"service/service-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/service/body_bg.png",
+					"images/main/images/BG_02.png",
+					"css/mgoo.css",
+					"images/service/user.png",
+					"images/service/line1.png",
+					"images/service/bottom_bg.png",
+					"images/service/button1.png",
+					"images/main/images/subtitle.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-freephone.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/subimg.png",
+					"images/main/banner/banner2.png",
+					"images/main/banner/banner4.png",
+					"images/main/banner/banner3.png",
+					"images/main/banner/banner1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"statistics/statistics-main.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"images/service/body_bg.png",
+					"css/mgoo.css",
+					"images/main/images/BG_02.png",
+					"images/main/images/subtitle.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/usercenter-main.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"images/usercenter/subtitle.jpg",
+					"images/service/body_bg.png",
+					"css/mgoo.css",
+					"images/main/images/BG_02.png",
+					"images/login-logo.png",
+					"images/usercenter/logo.png",
+					"images/login/line2.png",
+					"images/usercenter/icon2.png",
+					"images/usercenter/devicemanage.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/feedback.png",
+					"images/usercenter/moresettings.png",
+					"images/usercenter/operationguide.png",
+					"images/usercenter/resetpassword.png",
+					"js/basic/public.js",
+					"images/main/images/subtitle.png",
+					"images/usercenter/subtitle.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/head.png",
+					"js/app.js",
+					"images/usercenter/topbg.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/service/button1.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"usercenter/device-manage.html",
+					"usercenter/temp.html",
+					"usercenter/user-info.html",
+					"usercenter/group-manage.html",
+					"usercenter/scan.html",
+					"usercenter/settings.html"
+				],
+				"priority": 0
+			},
+			"tab-webview-main.html": {
+				"resources": [
+					"tab-webview-subpage-about.html",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/main/images/BG_01.png"
+				],
+				"refer": [
+					"tab-webview-subpage-setting.html",
+					"tab-webview-subpage-chat.html",
+					"tab-webview-subpage-contact.html"
+				],
+				"priority": 0
+			},
+			"monitor/history.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/map/map.js",
+					"images/main/banner/banner2.png",
+					"images/main/images/history/BG.png",
+					"css/mgoo.css",
+					"images/main/images/history/header.png",
+					"images/main/images/history/BG01.png",
+					"images/main/images/history/button10.png",
+					"images/main/images/history/button06.png",
+					"images/main/images/history/button08.png",
+					"images/main/images/history/button09.png",
+					"images/audio/choosedate.mp3",
+					"images/audio/266.mp3",
+					"images/audio/S011HS2.mp3",
+					"js/map/history.js",
+					"images/main/images/history/button02.png",
+					"images/main/images/history/button05.png",
+					"images/main/images/history/button04.png",
+					"images/main/images/history/button03.png",
+					"images/main/images/history/plus.png",
+					"images/main/images/history/play.png",
+					"images/main/images/history/less.png",
+					"images/main/images/history/pause.png",
+					"images/history/button10.png",
+					"images/history/play.png",
+					"images/history/button08.png",
+					"images/history/button09.png",
+					"images/history/pause.png",
+					"images/history/BG.png",
+					"images/history/less.png",
+					"images/history/button06.png",
+					"images/history/BG01.png",
+					"images/history/plus.png",
+					"js/basic/ajax.js",
+					"js/app.js",
+					"js/basic/public.js",
+					"js/map/BDLuShu.js",
+					"images/maps/point@24.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"monitor/nav_transparent.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"monitor/message-list.html": {
+				"resources": [
+					"css/mgoo.css",
+					"images/main/images/message/messageitem.png",
+					"css/mui.min.css",
+					"images/main/images/message/BG.png",
+					"images/main/images/message/msg.png",
+					"images/main/images/message/viewmap.png",
+					"images/main/images/message/checkbox.png",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"images/main/images/message/button.png",
+					"js/devices/message.js",
+					"images/message/viewmap.png",
+					"images/message/checkbox.png",
+					"images/message/messageitem.png",
+					"images/message/button.png",
+					"images/message/BG.png",
+					"images/message/msg.png",
+					"js/basic/public.js",
+					"images/message/settings/checkbox.png",
+					"images/public/checkbox-true.png",
+					"images/public/checkbox-false.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/settings/switch.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"monitor/message-settings.html",
+					"monitor/message-view.html"
+				],
+				"priority": 0
+			},
+			"monitor/message-settings.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/message/settings/BG.png",
+					"css/mgoo.css",
+					"images/message/settings/on.png",
+					"images/message/settings/off.png",
+					"images/message/settings/switch.png",
+					"images/public/checkbox.png",
+					"js/basic/public.js",
+					"images/message/settings/checkbox.png",
+					"fonts/mui.ttf",
+					"images/public/checkbox1.png",
+					"images/public/checkbox-false.png",
+					"images/public/checkbox-true.png",
+					"images/message/settings/msg_setting_bg.png",
+					"js/devices/message.js",
+					"js/basic/ajax.js",
+					"js/app.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"monitor/tracking.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/map/map.js",
+					"js/basic/public.js",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"images/maps/point@24.png",
+					"css/mgoo.css",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png",
+					"images/main/tracking/renche.png",
+					"images/main/tracking/street.png",
+					"images/main/tracking/type2.png",
+					"js/devices/tracking.js",
+					"images/main/tracking/type1.png",
+					"images/main/tracking/cars.png",
+					"images/main/tracking/NowLocation.png"
+				],
+				"refer": [
+					"monitor/street-scape.html"
+				],
+				"priority": 0
+			},
+			"monitor/device-info.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"js/basic/public.js",
+					"css/mgoo.css",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png",
+					"images/public/checkbox-false.png",
+					"images/public/checkbox-true.png",
+					"js/devices/message.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login1.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/head.png",
+					"fonts/mui.ttf",
+					"images/button-login1.png",
+					"js/app.js",
+					"js/basic/md5.js",
+					"css/mgoo.css",
+					"images/login/line2.png",
+					"images/logo3.png",
+					"js/basic/update.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"main.html",
+					"forget_password.html"
+				],
+				"priority": 0
+			},
+			"service-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mgoo.css",
+					"css/mui.min.css",
+					"js/basic/public.js"
+				],
+				"refer": [
+					"main.html"
+				],
+				"priority": 0
+			},
+			"usercenter-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"images/main/button/statistics.png",
+					"images/main/images/BG_12.png",
+					"css/mgoo.css",
+					"images/main/button/service.png",
+					"images/main/button/monitor.png",
+					"images/main/button/mycenter.png",
+					"css/mui.min.css",
+					"js/basic/public.js",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_01.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"statistics-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"images/main/button/statistics.png",
+					"images/main/button/service.png",
+					"images/main/button/monitor.png",
+					"images/main/button/mycenter.png",
+					"js/basic/public.js",
+					"images/main/images/BG_12.png",
+					"css/mgoo.css",
+					"css/mui.min.css",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_01.png"
+				],
+				"refer": [
+					"usercenter-main.html",
+					"service-main.html"
+				],
+				"priority": 0
+			},
+			"index.html": {
+				"resources": [
+					"images/main/banner/banner4.png",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_04.png",
+					"images/main/button/gjhf.png",
+					"images/main/button/jiefang.png",
+					"images/main/images/BG_08.png",
+					"images/main/banner/banner1.png",
+					"images/main/button/ssgz.png",
+					"images/main/button/status-move.png",
+					"images/main/images/BG_05.png",
+					"css/mgoo.css",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/main/button/sbxx.png",
+					"images/main/banner/banner3.png",
+					"images/main/button/shache.png",
+					"tab-webview-subpage-about.html",
+					"fonts/mui.ttf",
+					"service-main.html",
+					"monitor/monitor-main.html",
+					"images/main/images/BG_01.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/BG_12.png"
+				],
+				"refer": [
+					"tab-webview-subpage-setting.html",
+					"tab-webview-subpage-chat.html",
+					"tab-webview-subpage-contact.html",
+					"usercenter-main.html",
+					"statistics-main.html",
+					"service/service-main.html",
+					"usercenter/usercenter-main.html",
+					"statistics/statistics-main.html"
+				],
+				"priority": 0
+			},
+			"tab-webview-subpage-about.html": {
+				"resources": [
+					"css/mui.min.css",
+					"css/mgoo.css",
+					"images/main/banner/banner2.png",
+					"images/main/banner/banner4.png",
+					"images/main/images/BG_02.png",
+					"images/main/images/BG_04.png",
+					"images/main/banner/banner3.png",
+					"images/main/banner/banner1.png",
+					"js/mui.min.js",
+					"images/main/button/gjhf.png",
+					"images/main/button/jiefang.png",
+					"images/main/images/BG_08.png",
+					"images/main/button/ssgz.png",
+					"images/main/button/fenceon1.png",
+					"images/main/images/BG_05.png",
+					"images/main/button/sbxx.png",
+					"images/main/button/shache.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab-webview-subpage-contact.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tab-webview-subpage-chat.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/device-manage.html": {
+				"resources": [
+					"images/usercenter/devicemanage/devicelist_bg.png",
+					"images/usercenter/devicemanage/add.png",
+					"images/usercenter/devicemanage/delete.png",
+					"images/usercenter/devicemanage/button2.png",
+					"js/mui.min.js",
+					"images/usercenter/devicemanage/button1.png",
+					"css/mui.min.css",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"css/mgoo.css",
+					"images/usercenter/line3.png",
+					"fonts/mui.ttf",
+					"js/basic/public.js",
+					"images/usercenter/carlocalization.png",
+					"images/main/images/subtitle.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"usercenter/scan.html",
+					"usercenter/device-add.html",
+					"monitor/device-info.html"
+				],
+				"priority": 0
+			},
+			"usercenter/scan.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/basic/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/device-add.html": {
+				"resources": [
+					"images/usercenter/devicemanage/input_bg.png",
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mgoo.css",
+					"images/usercenter/devicemanage/next_button.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"usercenter/device-add-confirm.html",
+					"usercenter/device-add.html"
+				],
+				"priority": 0
+			},
+			"usercenter/temp.html": {
+				"resources": [
+					"images/service/body_bg.png",
+					"css/mgoo.css",
+					"js/mui.min.js",
+					"images/main/images/BG_02.png",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"images/main/images/subtitle.png",
+					"js/basic/common.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"monitor/message-view.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"js/basic/ajax.js",
+					"css/mui.min.css",
+					"js/map/map.js",
+					"js/basic/public.js",
+					"images/maps/point@24.png",
+					"css/mgoo.css",
+					"fonts/mui.ttf",
+					"images/main/images/BG_01.png",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/device-add-confirm.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/main/images/subtitle.png",
+					"css/mgoo.css",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/usercenter/line3.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"js/basic/public.js",
+					"fonts/mui.ttf",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [
+					"main.html"
+				],
+				"priority": 0
+			},
+			"usercenter/user-info.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"css/mgoo.css",
+					"fonts/mui.ttf",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/group-manage.html": {
+				"resources": [
+					"css/mgoo.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/main/images/subtitle.png",
+					"js/app.js",
+					"js/basic/ajax.js",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/settings.html": {
+				"resources": [
+					"css/mgoo.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/main/images/subtitle.png",
+					"images/main/images/BG_01.png",
+					"images/main/images/BG_12.png",
+					"images/main/button/monitor.png",
+					"images/main/button/service.png",
+					"images/main/button/statistics.png",
+					"images/main/button/mycenter.png",
+					"images/main/images/content_status_bg.png",
+					"images/main/images/BG_05.png",
+					"images/main/images/BG_08.png",
+					"images/history/BG01.png",
+					"images/history/button06.png",
+					"images/history/button10.png",
+					"images/message/messageitem.png",
+					"images/message/settings/switch.png",
+					"images/message/settings/checkbox.png",
+					"images/login/line2.png",
+					"images/service/button1.png",
+					"images/usercenter/body_bg.png",
+					"images/usercenter/line3.png",
+					"images/usercenter/devicemanage/input_bg.png",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/button1.png",
+					"images/usercenter/devicemanage/button2.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"images/usercenter/devicemanage/dac-body.png",
+					"images/service/service-lattice-bg.png",
+					"images/service/button/item-recharge.png",
+					"images/service/button/item-carbuy.png",
+					"images/service/button/item-carrepair.png",
+					"images/service/button/item-lostcarcall.png",
+					"images/service/button/item-chargingpile.png",
+					"images/service/button/item-freephone.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"monitor/street-scape.html": {
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mgoo.css"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"images/history/button07.png",
+				"images/message/settings/checkbox1.png",
+				"images/history/header1.png",
+				"images/images/BG_12.png",
+				"images/main/button/shache1.png",
+				"images/history/button11.png",
+				"images/images/BG_04.png",
+				"images/main/button/shefang1.png",
+				"js/common.js",
+				"images/images/BG_11.png",
+				"images/main/images/BG_03.png",
+				"css/common.css",
+				"images/images/BG_09.png",
+				"images/history/header.png",
+				"images/message/off.png",
+				"images/main/images/BG_11.png",
+				"libs/audio/7057.mp3",
+				"images/images/BG_03.png",
+				"images/main/button/nobrakes.png",
+				"images/images/BG_01.png",
+				"images/main/button/fenceon21.png",
+				"images/message/key04.png",
+				"images/history/button01.png",
+				"images/message/settings/key06.png",
+				"main1.html",
+				"libs/easymob-webim-sdk/quickstart.md",
+				"images/main/images/BG_09.png",
+				"usercenter/barcode_scan.html",
+				"images/images/BG_07.png",
+				"images/images/BG_10.png",
+				"images/main/button/weijihuo3.png",
+				"images/main/LOGO.png",
+				"images/main/images/BG_06.png",
+				"images/images/BG_08.png",
+				"images/main/images/BG_07.png",
+				"images/message/key07.png",
+				"images/main/button/alarm.png",
+				"images/images/BG_02.png",
+				"images/images/BG_06.png",
+				"images/usercenter/devicemanage/btn-confirm.png",
+				"tuisong.mp3",
+				"images/main/images/BG_10.png",
+				"images/images/BG_05.png",
+				"images/history/button12.png",
+				"images/main/images/driving1.png",
+				"images/user-photo.png"
+			]
+		}
+	},
+	"unpackage": [
+		"README.md",
+		"images/user-photo.png",
+		"libs/easymob-webim-sdk/quickstart.md"
+	],
+	"fullscreen": true
+}

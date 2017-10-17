@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			.mui-content{
+				padding-top: 45px; 
+				background-color:#303A43;
+			}
+			.mui-bar{
+				background-color: #161A1D;
+			} 
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mgoo-foot-color">设备管理</h1>
+		    <a class="mui-icon-plus mui-icon mui-icon-right-nav mui-pull-right" id="divAddDevie"></a>
+		</header>
+		
+		<div class="mui-content">
+			<div id="divSubtitle" class="mgoo-subtitle"></div>
+			<ul class="mui-table-view mui-table-view-chevron" id="ulDeviceList">
+			 	<!--<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>				
+					<div class="mui-slider-handle">
+						<img class="mui-media-object mui-pull-left" src="../images/usercenter/carlocalization.png"/>	
+						<div class="mui-media-body">
+							<span class="mui-badge mui-badge-inverted mui-badge-primary" style="font-size:18px;margin-top: 13px;">4578963</span>	
+							<p class="mui-ellipsis"></p>							
+						</div>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			}); 
+			mui.plusReady(function () { 
+				GetDeviceList()
+				document.getElementById('divAddDevie').addEventListener('tap',function () {
+					openWindow("device-add.html"); 
+				});
+				mui("#ulDeviceList").on("tap",".mui-btn-red",function (e) {
+					/*var deviceid = this.parentNode.parentNode.getAttribute("value"); 
+					var _this = this;
+					mui.confirm('确认删除该设备？', '警告', ['取消', '确认'], function(e) { 
+						if (e.index == 1) {
+							var $ = new ajaxPar("DeleteDevice"); 
+						  	$.ajax({
+						  		url:"/ajax/DevicesAjax.asmx?op=DeleteDevice",
+						  		data:{deviceid:deviceid}, //设备ID
+						  		success:function(res){ 
+						  			mui.toast(res.Message);
+						  		 	if (res.StatusCode == 200) {
+						  		 		_this.parentNode.parentNode.removeChild(elem);
+						  		 	}
+						  		}
+						  	}); 
+						}
+					},'div');*/
+				});
+				mui("#ulDeviceList").on("tap","li",function (e) {
+					var deviceid = this.getAttribute("value");
+					openWindow("../monitor/device-info.html",{ DeviceID : deviceid});
+				});
+			});
+			function GetDeviceList()
+			{
+				var state = app.getState();
+				var UserID=state.userid; 
+				var $ = new ajaxPar("GetDevicesList");
+			  	$.ajax({
+			  		url:"/ajax/DevicesAjax.asmx?op=GetDevicesList",
+			  		data:{userid:UserID}, 
+			  		success:function(res){
+			  			var ul = document.getElementById("ulDeviceList");
+				  		for(var i=0;i<res.length;i++)
+				  		{	
+				  			var html = [];
+				  			var li= document.createElement("li");
+				  			li.className="mui-table-view-cell";
+				  			li.setAttribute("value",res[i].DeviceID);
+						/*	html.push("<div class='mui-slider-right mui-disabled'>");
+							html.push("<a class='mui-btn mui-btn-red'><span class='mui-icon mui-icon-trash'>删除</span></a>");
+							html.push("</div>")		*/				
+							html.push("<div class='mui-slider-handle'>")	
+							html.push("<img class='mui-media-object mui-pull-left' src='../images/usercenter/carlocalization.png'/>")
+							html.push("<div class='mui-media-body'>")
+							html.push("<span class='mui-badge mui-badge-inverted mui-badge-primary' style='font-size:18px;margin-top: 13px;'>"+res[i].DeviceName+"</span>")
+							html.push("<p class='mui-ellipsis'></p>")
+							html.push("</div>")
+							html.push("</div>");
+							li.innerHTML=html.join('')
+							ul.appendChild(li); 
+				  		}
+			  		}
+			  	});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			html,body{
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-content{
+				overflow:hidden;
+				background-color:#303A43;
+				padding-top: 45px;
+			}
+			.mui-bar{
+				background-color: #161A1D;
+			}
+			.mui-table-view {
+				margin-top: 20px;
+				background-color: #7E8288;
+				color: white;
+			}
+			
+			.mui-table-view span.mui-pull-right {
+				color: #01E0F8;
+			}
+			.mui-ellipsis{
+				color: #C5D2E5; 
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">用户设置</h1>
+		</header>
+		<div class="mui-content">
+		    <div id="divSubtitle" class="mgoo-subtitle"></div>  
+			<div class="mgoo-device-info-body mgoo-foot-color-white">
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>用户名称:</label>	
+					</div>
+					<div class="mui-col-xs-8" >
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtUserName" placeholder="用户名称" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>登录账号:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" disabled="disabled" class="mui-input mui-input-clear mgoo-foot-color" id="txtLoginName" placeholder="登录账号" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>联 &nbsp;系&nbsp;人:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtContacts" placeholder="请输入联系人" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label> 联系电话:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtPhone" placeholder="请输入联系电话" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>联系邮箱:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtEmail" placeholder="请输入联系邮箱"  />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>联系地址:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtAddress" placeholder="请输入联系地址"/>
+					</div>
+				</div>
+				
+			 
+			 
+				<div class="mui-row mgoo-device-manage-bottom-div"> 
+					<!--<div class="mui-col-xs-6">
+						<button class="mgoo-device-manage-btn-submit">提交</button>
+					</div>
+					<div class="mui-col-xs-6"> 
+						<button class="mgoo-device-manage-btn-switch">切换</button>
+					</div>-->
+					<div id="" class="mgoo-device-manage-add-button-div">
+						<button id="btnSave" type="button" class="mui-btn mui-btn-blue mui-btn-block">保 存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			}); 
+			mui.plusReady(function () {
+				
+			});
+			mui.ready(function () {
+				GetUserInfo();
+				document.getElementById('btnSave').addEventListener('tap',function () {
+				
+				    UpdateUserInfo();
+				})
+			});
+			
+			function GetUserInfo()
+			{
+				var state = app.getState();
+				var $ = new ajaxPar("GetUserInfoByID");
+				$.ajax({
+					url:"/ajax/UsersAjax.asmx?op=GetUserInfoByID",
+					data: { userid: state.userid },
+					success:function (res) { 
+						document.getElementById("txtUserName").value= res.UserName;
+						document.getElementById("txtLoginName").value= res.LoginName;
+						document.getElementById("txtContacts").value= res.FirstName;
+						document.getElementById("txtPhone").value= res.CellPhone;
+						document.getElementById("txtEmail").value= res.PrimaryEmail;
+						document.getElementById("txtAddress").value= res.Address;
+						 
+					}
+				});
+				
+			}
+			
+			function UpdateUserInfo()
+			{
+				var Contacts =	document.getElementById("txtContacts").value;
+	            var Phone = document.getElementById("txtPhone").value;
+	            var Email = document.getElementById("txtEmail").value;
+	            var Address = document.getElementById("txtAddress").value;
+				var state = app.getState();
+				var $ = new ajaxPar("UpdateUserInfoByID"); 
+				$.ajax({
+					url:"/ajax/UsersAjax.asmx?op=GetUserInfoByID",
+					data: { userid: state.userid, firstname: Contacts, callphone: Phone, primaryemail: Email, address: Address },
+					success:function (res) { 
+						mui.toast(res.Message);
+						if (res.StatusCode == 200) {
+							setTimeout(function () {
+								mui.back()
+							},400); 
+						} 
+					}
+				});
+			} 
+		</script>
+	</body>
+
+</html>

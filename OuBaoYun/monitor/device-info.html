@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			.mui-content{
+				padding-top: 45px; 
+				background-color:#303A43;
+				overflow: hidden;
+			}
+			.mui-bar{
+				background-color: #161A1D;
+			}
+		 
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mgoo-foot-color">设备信息</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div id="divSubtitle" class="mgoo-subtitle"></div> 
+			<div class="mgoo-device-info-body mgoo-foot-color-white" style="overflow-x: auto;">
+				<div style="width: 100%;height: 98%;overflow-x: auto; ">
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>设备名称:</label>	
+					</div>
+					<div class="mui-col-xs-8" >
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtDeviceName" placeholder="请输入设备名称" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>流量卡号:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" disabled="disabled" class="mui-input mui-input-clear mgoo-foot-color" id="txtPhoneNum" placeholder="请输入手机号码" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>设备IMEI:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" disabled="disabled" class="mui-input mui-input-clear mgoo-foot-color" id="txtSerialNumber" placeholder="请输入IMEI" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>车&nbsp;牌 &nbsp;号:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtCarNum" placeholder="请输入车牌号" />
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>激活时间:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtActiveDate" placeholder="激活时间"  disabled="disabled"/>
+					</div>
+				</div>
+				
+				<div class="mui-row mgoo-device-info-row">
+					<div class="mui-col-xs-4" > 
+						<label>到期时间:</label>	
+					</div>
+					<div class="mui-col-xs-8">
+						<input type="text" class="mui-input mui-input-clear mgoo-foot-color" id="txtExpireDdate" placeholder="到期时间"  disabled="disabled"/>
+					</div>
+				</div>
+				
+				
+			 	
+			 	<label style="">震动报警灵敏度</label>
+				<div class="mui-row" id="divDeviceKeen">
+					<div class="mui-col-xs-4">
+						<div class="mgoo-message-setting-checkbox" name="chkSens" value ="1">  
+			    				<label>灵敏度高</label>  
+			    		</div>
+					</div>
+					<div class="mui-col-xs-4">
+						<div class="mgoo-message-setting-checkbox" name="chkSens" value ="2">  
+			    				<label>灵敏度中</label>  
+			    		</div>
+					</div>
+					<div class="mui-col-xs-4">
+						<div class="mgoo-message-setting-checkbox" name="chkSens" value ="3">  
+			    				<label>灵敏度低</label>  
+			    		</div>
+					</div> 	
+				</div>
+			 	<div class="mui-row" style="height: 78px;line-height: 37px; padding-top: 10px;">
+					<div class="mui-col-xs-4" > 
+						<label>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</label>	
+					</div>
+					<div class="mui-col-xs-8" style="height: 110px;">
+						<textarea id="txtDescription" class="mgoo-foot-color" placeholder="请输入备注"></textarea>
+					</div>
+				</div>
+				<div class="mui-row mgoo-device-manage-bottom-div"> 
+					<!--<div class="mui-col-xs-6">
+						<button class="mgoo-device-manage-btn-submit">提交</button>
+					</div>
+					<div class="mui-col-xs-6"> 
+						<button class="mgoo-device-manage-btn-switch">切换</button>
+					</div>-->
+					<div id="" class="mgoo-device-manage-add-button-div">
+						<button id="btnNext" type="button" class="mui-btn mui-btn-blue mui-btn-block">提 交</button>
+					</div>
+				</div>
+			
+				</div>
+		    </div>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript" src="../js/devices/message.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var DeviceID = null;
+			mui.plusReady(function () {
+				//DeviceID = app.getCurrentDeviceInfo().deviceid; 
+				var self = plus.webview.currentWebview();
+				DeviceID = self.DeviceID;
+			    var check = new checkbox(".mgoo-message-setting-checkbox",function(e,c){
+					
+				},{},function(e,c){
+					var name = e.getAttribute("name"); 
+					if (name == "chkSens") {
+						var cur = mui('#divDeviceKeen .mgoo-checkbox-selected')[0]; 
+						console.log(cur == e);  
+					    if (cur == e) {
+					    	return false;
+					    }
+						mui('#divDeviceKeen .mgoo-message-setting-checkbox').each(function (index,element) {
+							if (element != e) { 
+								setCheckBoxSelected(element,"");
+							}
+						});
+					} 
+					return true;
+				});
+			 	GetDeviceInfoByID();
+			 	document.getElementById('btnNext').addEventListener('tap',function () {
+			 	
+			 	    UpdateDeviceInfoByID();
+			 	});
+			 	
+			});
+			mui.ready(function () {
+				
+			});
+		 	function GetDeviceInfoByID () {
+		 	
+		 		var a = new ajaxPar("GetDeviceInfoByID");
+		 		a.ajax({
+		 			url:"/ajax/DevicesAjax.asmx?op=GetDeviceInfoByID",
+		 			data:{deviceid:DeviceID},
+		 			success:function(res){
+		 				document.getElementById("txtDeviceName").value=res.DeviceName;
+		 				document.getElementById("txtSerialNumber").value = res.SerialNumber;
+		 				document.getElementById("txtPhoneNum").value = res.PhoneNum;
+		 				document.getElementById("txtCarNum").value = res.CarNum;
+		 				document.getElementById("txtActiveDate").value = res.ActiveDate;
+		 				document.getElementById("txtExpireDdate").value = res.HireExpireDate;
+		 				document.getElementById("txtDescription").value = res.Description || '';
+		 			
+		 				setSelect("#divDeviceKeen .mgoo-message-setting-checkbox","chkSens",res.Sens);
+		 			}
+		 		});
+		 	}
+		 	function UpdateDeviceInfoByID  () {
+	 			var cur = mui('#divDeviceKeen .mgoo-checkbox-selected')[0];
+		 		var sens = cur.getAttribute("value");
+			 		 
+		 		var a = new ajaxPar("UpdateDeviceInfoByID");
+		 		var data = {
+		 			deviceid:DeviceID,
+		 			devicename:document.getElementById("txtDeviceName").value,
+		 			carusername:'',
+		 			cellphone:'',
+		 			carnum:document.getElementById("txtCarNum").value,
+		 			groupid:'-1',
+		 			description:document.getElementById("txtDescription").value ,
+		 			sens :sens
+		 		};
+		 		a.ajax({
+		 			url:"/ajax/DevicesAjax.asmx?op=UpdateDeviceInfoByID",
+		 			data:data,
+		 			success:function(res){
+		 				mui.toast(res.Message);
+		 				if (res.StatusCode == 200) {
+		 					setTimeout(function  () {
+		 						mui.back();
+		 					},200)
+		 				}
+		 			}
+		 		});
+		 	}
+		</script>
+	</body>
+
+</html>

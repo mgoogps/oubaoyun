@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+	<link href="../css/mui.min.css" rel="stylesheet" /> 
+	<link rel="stylesheet" href="../css/mgoo.css" />
+	<style type="text/css">
+		.mui-content{overflow: hidden;}
+	</style>
+</head>
+
+<body>
+	<div class="mui-content">
+	    <div id="divSubtitle" class="mgoo-subtitle"></div> 
+	    <div id="" class="mui-row" style="background: url(../images/usercenter/topbg.png);background-size:100% 100% ; background-color: #171B1E; width: 100%; height: 100px">
+	    	<div class="mui-col-xs-4">
+	    		<img src="../images/usercenter/head.png" style="height: 75%;width: 90%;padding-left: 35px;padding-top: 25px; "/> 
+	    	</div> 
+	    	<div class="mui-col-xs-8 mgoo-foot-color" style="padding-top:40px">
+	    		<label id="lableUserName">1</label> <br />
+	    		<label id="lableLoginName">1</label>	
+	    	</div> 
+	    </div>
+	    <div id="" class="mgoo-usercenter-body mgoo-foot-color">
+				<div id="divDeviceManage" class="mgoo-usercenter-item" style="margin-top: -10px;">
+					<img src="../images/usercenter/devicemanage.png"/>
+					<label>用户设置</label>
+					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
+				</div>
+				<div class="mgoo-usercenter-line" style=""></div>
+				
+				<!--<div id="" class="mgoo-usercenter-item">
+					<img src="../images/usercenter/resetpassword.png"/>
+					<label>分组管理</label>
+					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
+				</div>
+				<div class="mgoo-usercenter-line" style=""></div>-->
+				
+				<div id="" class="mgoo-usercenter-item">
+					<img src="../images/usercenter/resetpassword.png"/>
+					<label>&nbsp;设备管理</label>
+					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
+				</div>
+				<div class="mgoo-usercenter-line" style=""></div>
+				
+				<!--
+				
+				<div id="" class="mgoo-usercenter-item">
+					<img src="../images/usercenter/operationguide.png"/>
+					<label>操作指南</label>
+					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
+				</div>
+				<div class="mgoo-usercenter-line" style=""></div>
+				
+				<div id="" class="mgoo-usercenter-item">
+					<img src="../images/usercenter/moresettings.png"/>
+					<label>系统设置</label>
+					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
+				</div>
+				<div class="mgoo-usercenter-line" style=""></div>-->
+				 
+		</div>
+		 
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/app.js" ></script>
+	<script type="text/javascript" src="../js/basic/public.js" ></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.plusReady(function () {
+			/*document.getElementById('divDeviceManage').addEventListener('tap',function () {
+			    openWindow("device-manage.html");
+			})*/
+			/*var tmep = mui.preload({
+				url:"temp.html",
+				id:"temp.html"
+			});*/
+			mui(".mgoo-usercenter-body").on("tap",".mgoo-usercenter-item",function () {
+				var text = this.innerText; 
+				if ( text.indexOf('更多设置') == 1) { 
+					openWindow("scan.html");
+				}else if(text.indexOf("用户设置") == 1){
+					openWindow("user-info.html");
+				}else if(text.indexOf("分组管理") == 1){
+					openWindow("group-manage.html");
+				}else if(text.indexOf("设备管理") >= 1){
+					openWindow("device-manage.html");
+				}else if(text.indexOf("系统设置") == 1){ 
+					openWindow("settings.html");
+				}else if(text.indexOf("续费管理") > 0){
+					//openWindow("barcode_scan.html");	
+				}else{ 
+					//openWindow("temp.html",{title:this.innerText});
+				}
+				//mui.fire(temp,"onLoading",{title:this.innerText});
+				//tmep.show("zoom-fade-out");
+			})
+		});
+		mui.ready(function () {
+			var state = app.getState();
+			document.getElementById("lableUserName").innerText ="名称："+ state.username || "";
+			document.getElementById("lableLoginName").innerText = "登录账号:"+state.account || "";
+		});
+	</script>
+</body>
+</html>

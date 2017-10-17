@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mgoo.css" />
+		<style type="text/css">
+		html,body{
+				height: 100%; color: #9A9A99;
+		}
+		.mui-content{
+			background-color: #161A1D;
+			height: 100%; 
+			
+		}
+		.mui-content div{
+			background-color: #161A1D;
+		}
+		.mgoo-input{
+			filter: Alpha(Opacity=0); opacity:0; font-size:12px; color:#9A9A99;
+			border:  0px solid blue;height: 90px; width: 100%;
+		}
+		.mui-bar{
+			background-color: #303942
+		}
+		 
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;">欧宝云卫士</a>
+		    <h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+		    <div style="height: 50%; border: 0px solid red; text-align: center; padding-top: 90px;color: #9A9A99;">
+		    	<img src="images/logo3.png" style="height: 80%;"/>
+		    	<br />
+		    	<label class="mui-hidden" id="labelAccount"></label>
+		    </div>
+		    <div style="background-color:#9A9A99;">
+		    	 
+		    		<div style="padding-top: 20px;">  </div> 
+				    <div class="mui-input-row" id="divAccount" style="padding: 0px 30px;">
+				        <label>账 &nbsp&nbsp&nbsp号</label>
+				    	<input type="text" id="txtLoginName" class="mui-input-clear" placeholder="手机号或账号" >
+				    </div>
+				    <div class="mgoo-line"id="divAccountLine" style="  ">  </div>
+				   
+				    <div class="mui-input-row"style="padding: 0px 30px;">
+				        <label>密 &nbsp&nbsp&nbsp码</label>
+				        <input type="password" id="txtLoginPassword" class="mui-input-clear" placeholder="请输入密码" value="">
+				       
+				    </div>
+				    <div class="mgoo-line"id="divAccountLine" style="padding: 0px 30px;">  </div>
+				    <div class="mui-button-row" style="padding-top: 30px;">
+				     	<img src="images/button-login1.png" style="width: 90%;" id="btnLogin"/>
+				    </div>
+			      	<div class="mui-row"> 
+			      		<div class="mui-col-xs-12" style=" padding-left: 30%;"> 
+		      				<div class="mui-input-row mui-checkbox mui-left">
+							  <label>记住密码</label>
+							  <input id="inputKeepPassword" value="" type="checkbox">
+							</div> 
+				       </div> 
+					</div>
+				    <div class="mui-button-row" style="color: white;">
+				   		<label id="labelSwitchAccount" >切换用户</label> | <label id="lableForgetPwd">忘记密码?</label>
+				    </div>
+				 	
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/basic/md5.js" ></script>
+		<script type="text/javascript" src="js/app.js" ></script>
+		<script type="text/javascript" src="js/basic/update.js" ></script>
+		<script type="text/javascript">
+			mui.init();
+			var isMd5 = true;
+			var state ;
+			mui.ready(function(){
+				state = app.getState();
+				var accountBox = document.getElementById("txtLoginName");
+				if (state.account) {
+					document.getElementById("divAccount").classList.add("mui-hidden");
+					document.getElementById("divAccountLine").classList.add("mui-hidden");
+					accountBox.value = state.account;
+					var labelAccount = document.getElementById("labelAccount");
+					labelAccount.innerText = state.account;
+					labelAccount.classList.remove("mui-hidden"); 
+					document.getElementById("inputKeepPassword").checked=state.keeppassword;
+					if(state.keeppassword)
+					{
+						document.getElementById("txtLoginPassword").value = state.password;
+						isMd5 = false;
+					}
+				}
+				document.getElementById('lableForgetPwd').addEventListener('tap',function () {
+			       	mui.openWindow({
+						url:"forget_password.html",
+						id:"forget_password.html",
+						show:{ 
+						    aniShow:"zoom-fade-out" ,
+						    duration:"200"
+					    },
+						waiting:{
+							autoShow:true, 
+							title:'正在加载...',
+						},
+						extras:{}
+					}); 
+				})
+			})
+			mui.plusReady(function () {
+				//plus.navigator.closeSplashscreen();
+				/*var mainPage = mui.preload({
+					id:"main",
+					url:"main.html"
+				});*/
+				checkUpdate_apk();
+				
+				setTimeout(function () {
+					checkUpdate_wgt();	
+				},3000);
+				
+				if (plus.runtime.appid == "HBuilder") {
+					//document.getElementById("txtLoginPassword").value="123456";
+				}
+				 
+				var toMain = function () {
+					/*mui.fire(mainPage,"onShow",{}); 
+					mainPage.show("pop-in");*/
+					
+					plus.nativeUI.closeWaiting();
+					mui.openWindow({
+						url:"main.html",
+						id:"main",
+						show:{ 
+						    aniShow:"zoom-fade-out" ,
+						    duration:"200"
+					    },
+						waiting:{
+							autoShow:true, 
+							title:'正在加载...',
+						},
+						extras:{}
+					});
+				}
+				var accountBox = document.getElementById("txtLoginName");
+				var passwordBox = document.getElementById("txtLoginPassword");
+				document.getElementById("btnLogin").addEventListener("tap",function () {
+					plus.nativeUI.showWaiting("正在登录..."); 
+					if (!isMd5) { 
+						if (state) {
+							state = app.getState();
+						}
+						if (state.password != passwordBox.value || state.account!=accountBox.value) {
+							isMd5 = true;
+						}
+					} 
+					var sp = document.getElementById("inputKeepPassword").checked;
+					var loginInfo = {
+						account: accountBox.value,
+						password: passwordBox.value,
+						keeppassword: sp,
+						ismd5: isMd5
+					};
+					app.login(loginInfo,function(err){
+						if (err) {
+							plus.nativeUI.closeWaiting();
+							plus.nativeUI.toast(err);
+							return;
+						}
+						toMain();
+					});
+				})
+				document.getElementById('labelSwitchAccount').addEventListener('tap',function () {
+				    app.setState(null);
+				    app.setCurrentDeviceInfo(null);
+				    document.getElementById("labelAccount").innerText="";
+				    document.getElementById("divAccount").classList.remove("mui-hidden");
+					document.getElementById("divAccountLine").classList.remove("mui-hidden");
+				})
+			});
+			
+		 
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>美谷科技</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style>  
+			html,body {
+				background-color: #171B1E;
+			}
+			.mui-content{overflow: hidden;background-color: #171B1E;}	
+			#divPopoverDeviceList{
+				background-color: #22292F;
+			  	width: 250px;
+			  	margin-left: calc(50% - 125px)!important;
+			  	height: 300px;
+			}
+			#divPopoverDeviceList .mui-popover-arrow:after{
+				background-color: #22292F;
+				margin-left: 125px; 
+			} 
+		</style>
+	</head>
+	<body>
+		<div class="mui-content" style="height: 100%;">
+			<div id="divSubtitle" class="mgoo-subtitle"></div> 
+			<div id="divPopoverDeviceList" class="mui-popover">
+			    <div class="mui-popover-arrow"></div>
+					<div class="mui-scroll-wrapper" style="margin: 0px 0;">
+					<div class="mui-scroll">
+						<ul class="mui-table-view  mgoo-device-list" id="ulDeviceList" >
+							<!--  <li class="mui-table-view-cell"><a href="#">Item1</a></li>
+			  				  <li class="mui-table-view-cell"><a href="#">Item2</a></li>-->
+						</ul>
+				 	</div>
+				</div> 
+			</div>
+		 	<div id="slider" class="mui-slider" >
+			    <div class="mui-slider-group mui-slider-loop">
+			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="../images/main/banner/banner4.png">
+			      </a>
+			    </div>
+			    <!-- 第一张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="../images/main/banner/banner1.png">
+			      </a>
+			    </div>
+			    <!-- 第二张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="../images/main/banner/banner2.png">
+			      </a>
+			    </div>
+			    <!-- 第三张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="../images/main/banner/banner3.png">
+			      </a>
+			    </div> 
+			     <!-- 第四张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="../images/main/banner/banner4.png">
+			      </a>
+			    </div> 
+			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="../images/main/banner/banner1.png">
+			      </a>
+			    </div>
+			    </div>
+			    <div class="mui-slider-indicator">
+				    <div class="mui-indicator mui-active"></div>
+				    <div class="mui-indicator"></div>
+				    <div class="mui-indicator"></div>
+				    <div class="mui-indicator"></div>
+			    </div> 
+			</div>
+			<div id="divContentStatus" class="mgoo-content-status">
+				<div id="divContentStatusLeft" style="height: 100%;width: 35%;border: 0px solid saddlebrown;float: left;"> 
+					<div style="margin-top: 50%;margin-right: -10px;">
+						<span class="mgoo-foot-color"  style="width: 60%;">已设防</span>
+						<hr style="width: 60%;;border:none;border-top:1px solid #01E0F8; "/>
+						<span class="mgoo-foot-color" >未刹车</span>
+					</div>
+				</div>
+				<div id="divContentStatusCenter" style="border: 0px solid red;height: 100%;width: 30%; float: left;">
+					<img src="../images/loading.gif" style="height:40%; margin-top: 40% "/> 
+					<div style=" width: 100%;border-left: 2px solid #01E0F8;border-right: 2px solid #01E0F8;white-space:nowrap ">
+						<span class="mgoo-foot-color-white">loading...</span>
+					</div>
+				</div>
+				<div id="divContentStatusRight" style="border: 0px solid seagreen; height: 100%;width: 35%;float: left;">
+					<div style="margin-top: 50%;margin-left: -10px;">
+					 	<span class="mgoo-foot-color">电池正常</span>
+						<hr style="width: 60%;;border:none;border-top:1px solid #01E0F8; "/>
+						<span class="mgoo-foot-color">围栏0米</span>
+					</div>
+				</div>
+			</div>
+				<div id="divButtons" class="mgoo-divbuttons">
+				<div id="divButtons1" class="mgoo-button-status1">
+					<div style="border-right: 1px solid #123949;" id="divDeviceStatus1">
+						<div class="mgoo-button-status-item">
+							<img src="../images/loading.gif"/><!--../images/main/button/jiefang.png-->
+							<br />
+							<span class="mgoo-foot-color-white">解防设防</span>
+						</div>
+					</div> 
+					<div style="border-right: 1px solid #123949;" id="divDeviceStatus2">
+						<div class="mgoo-button-status-item">
+							<img src="../images/loading.gif"/>
+							<br />
+							<span class="mgoo-foot-color-white">远程刹车</span>
+						</div>
+					</div>
+					<div id="divDeviceStatus3">
+						<div class="mgoo-button-status-item">
+							<img src="../images/loading.gif"/>
+							<br />
+							<span class="mgoo-foot-color-white">电子围栏</span>
+						</div>
+					</div>
+				</div>
+				<div id="divButtons2" class="mgoo-button-status2">
+				 	<div style="border-right: 1px solid #123949;" id="divDeviceStatus4">
+						<div id="divBtnMonitor" class="mgoo-button-status-item">
+							<img src="../images/loading.gif"/><!--../images/main/button/ssgz.png-->
+							<br />
+							<span class="mgoo-foot-color-white">实时跟踪</span>
+						</div>
+					</div> 
+					<div style="border-right: 1px solid #123949;" id="divDeviceStatus5">
+						<div id="divBtnHistory" class="mgoo-button-status-item">
+							<img src="../images/loading.gif"/><!--../images/main/button/gjhf.png-->
+							<br />
+							<span class="mgoo-foot-color-white">轨迹回放</span>
+						</div>
+					</div>
+					<div id="divDeviceStatus6">
+						<div id="divBtnDeviceInfo" class="mgoo-button-status-item">
+							<img src="../images/loading.gif" /><!--../images/main/button/sbxx.png-->
+							<br />
+							<span class="mgoo-foot-color-white">设备信息</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		
+		</div>
+		<div style=" height: 2px; position: absolute;bottom: 3px;left: 0px;right: 0px;background: url(../images/main/images/line4.png);background-size:100% 100% ;"></div>
+	 
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/app.js" ></script>
+	<script type="text/javascript" src="../js/basic/update.js" ></script>
+	<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+	<script type="text/javascript" src="../js/basic/public.js" ></script>
+	<script type="text/javascript" src="../js/basic/main.js" ></script>
+	<script> 
+		document.addEventListener('showPopover', function() { 
+			mui('#divPopoverDeviceList').popover('toggle');
+			
+		});
+		document.addEventListener('monitorRefresh',function () {
+			var DeviceID = app.getCurrentDeviceInfo().deviceid; 
+			 
+			GetDeviceList();
+		    GetDeviceDetailByDeviceID(DeviceID);
+		})
+	</script>
+</html>

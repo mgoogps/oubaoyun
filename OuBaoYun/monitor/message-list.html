@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>信息中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style>
+			.mgoo-content{
+				height: 100%;
+				background:  url(../images/message/BG.png);
+				background-size:100% 100% ;
+				overflow-x:scroll ;
+				background-color: #000000;
+			}
+		</style>
+	</head>
+	<body  >
+		<header class="mui-bar mui-bar-nav mui-bar-transparent mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a id="aSettings" class="mui-icon mui-icon-gear mui-pull-right"></a>
+		    <h1 class="mui-title mgoo-foot-color">信息中心</h1>
+		</header>
+		<div class="mui-content mgoo-content" id="divContent">
+		    <div id="divMessageList" class="mgoo-message-list"> 
+		   		<!--<div class="mgoo-message-item">
+		   			<div class="mgoo-message-item-msgimg"  >
+		   				<img src="../images/message/msg.png"/>
+		   			</div> 
+		   			<div class="mgoo-message-item-content" style="border: 0px solid red;"> 
+		   				<div>
+		   					<p>设备名称：测试设备</p> 
+			   				<p>报警类型：震动报警</p> 
+			   			 	<p>报警时间：2017-1-2 14:09:05</p>   
+		   				</div>
+		   				<div class="mgoo-message-item-viewmap"> 
+		   				   <img src="../images/message/viewmap.png"/>  
+		    			</div>
+		    			<div class="mgoo-message-setting-checkbox"> 
+		    			</div> 
+		   			</div>
+		   		</div> -->
+		   		
+		   </div>
+			<div id="divPullUp" style="height: 70px; text-align: center;color: white;">
+				 上拉加载更多... 
+			</div>
+		</div>
+	 	<div id="" class="mgoo-foot-color-white" style="height: 50px; border: 0px solid red; position: absolute;width: 100%;left: 0px;right: 0px; bottom: 2px;  ">
+	   		<div id="divBtnSelectAll" checked="" style="background: url(../images/message/button.png);background-size:100% 100% ;height: 40px;width: 80px;position: absolute;left: calc(50% - 100px);text-align: center;" >
+	 			<label style="line-height: 40px;">全选</label>  		 	
+	   		</div>
+	   		<div id="divBtnDeleteMessage" style="background: url(../images/message/button.png);background-size:100% 100% ;height: 40px;width: 80px;position: absolute;right: calc(50% - 100px);text-align: center;" >
+	 			<label style="line-height: 40px;">删除</label>  		 	
+	   		</div>
+	    </div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript" src="../js/devices/message.js" ></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true
+			});
+			mui.plusReady(function() {
+				var currentIndex = 1;
+				var msgsetting = mui.preload({
+					id:"message-settings.html",
+					url:"message-settings.html"
+				});
+				MessageList(currentIndex);
+				document.getElementById('aSettings').addEventListener('tap',function () {
+				    //openWindow("message-settings.html")
+				    msgsetting.show("zoom-fade-out");
+				})
+				 
+				/*var check = new checkbox(".mgoo-message-setting-checkbox",function(e,c){
+					 
+				}); */
+				 
+				document.getElementById("divMessageList").addEventListener("dragstart",function () {
+					//console.log( document.getElementById("divContent").scrollTop + document.getElementById("divContent").clientHeight);
+					//console.log("向上滑动"+Math.random(1000));
+				});
+				//大于50条 &&  拖动结束 && 
+				//(document.getElementById("divContent").scrollTop + document.getElementById("divContent").clientHeight)==document.getElementById("divContent").scrollHeight
+				
+				document.getElementById("divMessageList").addEventListener("dragend",function () {
+					var scrollHeight = document.getElementById("divContent").scrollHeight; 
+					var scrollTop = document.getElementById("divContent").scrollTop + document.getElementById("divContent").clientHeight;
+					if (scrollTop >= scrollHeight) {
+						document.getElementById("divPullUp").innerText="正在加载...";
+						currentIndex++;
+						MessageList(currentIndex);
+					}
+					//console.log("拖动结束："+ (document.getElementById("divContent").scrollTop + document.getElementById("divContent").clientHeight));
+				})
+				//element.addEventListener("swipeup",function () {
+				document.getElementById('divBtnSelectAll').addEventListener('tap',function () {
+					var check = this.getAttribute("checked") ;
+					if (check) { 
+						this.setAttribute("checked","") ;
+					}else{
+						this.setAttribute("checked","true") ;
+					}
+					check = this.getAttribute("checked") ;
+					var selectsrc = "../images/public/checkbox-true.png"; //选择的图片路径
+					var unselected ="../images/public/checkbox-false.png"; //未选中的图片路径
+				    mui('.mgoo-message-setting-checkbox').each(function (index,element) {
+				    	if (check) { 
+				    		element.getElementsByTagName("img")[0].src = selectsrc;
+				    		element.className ="mgoo-message-setting-checkbox mgoo-checkbox-selected"; 
+				    	}else{
+				    		element.getElementsByTagName("img")[0].src = unselected;
+				    		element.className ="mgoo-message-setting-checkbox"; 
+				    	}
+				    })
+				})
+				
+				document.getElementById('divBtnDeleteMessage').addEventListener('tap',function () {
+				    DeleteMessage();
+				})
+				
+				var _back = mui.back;
+				mui.back = function(event) {
+					backMain(); 
+					_back();
+				};
+			});
+		</script>
+	</body>
+</html>

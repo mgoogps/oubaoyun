@@ -1,0 +1,449 @@
+html,body{
+	height: 100%;
+	width: 100%; 
+	background-color: #000000;		 
+}
+.mui-content{
+	height: 100%; 
+}
+ /* ---------main.html------*/
+.mgoo-foot-color{
+	font-family : 微软雅黑,宋体;
+	color: #01E0F8!important;
+	
+}
+.mgoo-foot-color-white{
+	color: #FFFFFF!important;
+}
+.mgoo-foot-color-gray{
+	color: #929292!important;
+}
+.mgoo-header{
+	 
+	/*background: url(../images/main/images/BG_01.png)no-repeat center!important; */
+	
+}
+.mgoo-header h1{
+	font-size: 22px;color: #01E0F8!important;
+}
+.mgoo-subtitle{
+	background: url(../images/main/images/subtitle.png);
+	background-size:100% 100% ;
+	width: 100%;
+	height: 23px;
+	 
+	border-top:0px solid #01E0F8;
+	/*position: fixed;*/
+	/*margin-top: -11px;*/
+}
+.mgoo-footer{
+	 background: url(../images/main/images/BG_12.png); background-size:100% 100%;border-top: 0px solid #01E0F8 ;
+}
+.mgoo-footer-item-monitor{
+	background: url(../images/main/button/monitor.png) no-repeat center;
+	height: 100%;width: 25%;float: left;
+	background-size:100% 100% ;background-repeat:no-repeat;
+}
+.mgoo-footer-item-service{
+	background: url(../images/main/button/service.png) no-repeat center;
+	height: 100%;width: 25%;float: left;
+	background-size:100% 100%;background-repeat:no-repeat;
+}
+.mgoo-footer-item-statistics{
+	background: url(../images/main/button/statistics.png) no-repeat center;
+	height: 100%;width: 25%;float: left;
+	background-size:100% 100% ;background-repeat:no-repeat;
+}
+.mgoo-footer-item-mycenter{
+	background: url(../images/main/button/mycenter.png) no-repeat center;
+	height: 100%;width: 25%;float: left;
+	background-size:100% 100% ;background-repeat:no-repeat;
+}
+.mgoo-content-status
+{
+	background: url(../images/main/images/content_status_bg.png) ;
+	background-size:100% 100% ;
+	/*height: 140px;*/
+	height: 30%;
+	text-align: center!important; 
+	overflow:hidden;
+}
+.mgoo-divbuttons{
+	height: 100%;width: 100%;border: 0px solid red;
+}
+.mgoo-button-status1{
+	 width: 100%;border: 0px solid #01E0F8;  
+}
+.mgoo-button-status1 div{ 
+	width: 33.33%;height:100%; background: url(../images/main/images/BG_05.png);background-size:100% 100%;float: left; 
+	border-top: 0px solid #01E0F8;
+}
+.mgoo-button-status2{
+	width: 100%; 
+}
+.mgoo-button-status2 div{
+	width: 33.33%;height:100%; background: url(../images/main/images/BG_08.png);background-size:100% 100%;float: left; 
+	border-bottom: 0px solid #01E0F8;
+}
+
+.mgoo-button-status-item{
+	/*height: 100%;*/width: 100%!important;
+	text-align: center;
+}
+.mgoo-button-status-item img{
+	height: 50%;padding-top: 5px;
+}
+.mgoo-device-list{
+	background: #303A43!important;
+}
+.mgoo-message-count{
+	top: 5px!important;
+	margin-left: -25px!important;;
+	background-color: #f0ad4e!important;;
+	color: #fff;
+}
+ /* ---------main.html end------*/
+
+/*------------- tracking.html -------------------*/
+#divMapWindowInfo{		
+	background-color: #FFFAFA	;										
+    position: relative;
+    border:1px solid #A6A6A6;	 
+    filter:alpha(opacity=50);  
+    -moz-opacity:0.5; 
+    opacity: 0.8;   
+    border-radius:5px 5px 5px 5px;      
+}
+#divMapWindowInfo:after{
+    content:'';
+    position:absolute;
+    border:1px solid #8E8E8E;
+    border:15px solid transparent;
+    border-top-color:#8E8E8E;	         
+    top:100%;
+    margin-left:93px;		     	       
+}
+ #SpeedCircle{
+	/* justify-content:center;//子元素水平居中
+    align-items:center;//子元素垂直居中
+    display:-webkit-flex;*/
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin-top: 19px;
+	color: #007AFF;
+	font-size: 32px;
+}	
+#outCircle{
+	position:absolute;
+	border: 3px solid #007AFF;
+	width: 65px; 
+	height: 65px; 
+	margin-left: 10px;
+	margin-top: 10px;
+	-moz-border-radius: 50px; 
+	-webkit-border-radius: 50px; 
+	border-radius: 50px; 
+	margin：0 auto;
+	z-index: 100; 
+}
+.distance{
+	position: fixed; bottom: 11.5%;left: 10px;
+}
+.fontdistance{
+	position: fixed;
+	bottom: 0px;
+	left: 23%;
+}
+/*------------- tracking.html  end -------------------*/
+
+/* ----history----- */
+
+.mgoo-date-range{
+	top: 50px;   position: fixed;z-index: 100; 
+	background: url(../images/history/BG01.png);
+	background-size:100% 100% ;text-align: center;
+	width: 320px;left:calc(50% - 160px);height:380px
+}
+.mgoo-date-range #divChooseDay{
+	width: 100%; 
+	font-size: 10;
+	height: 23px;
+	margin-top: 23px;
+}
+
+.mgoo-date-range #divChooseDate{
+	width: 100%;  height: calc(100% - 23px - 60px);
+	padding-top: 10px;padding-left: 20px;
+}
+.mgoo-date-range #divButtons{
+	height: 60px;text-align: center;  
+	padding-top: 30px;padding-left: 65px;
+}
+.mgoo-date-range #divBtnCancel{
+	background: url(../images/history/button06.png);background-size:100% 100%;height: 40px;width: 70px;float: left;
+}
+.mgoo-date-range #divBtnCancel label{
+	height: 100%; top: 25%; position: relative;color: #0D766B;
+}
+.mgoo-date-range #divBtnConfirm{
+	background: url(../images/history/button06.png);background-size:100% 100%;height: 40px;width: 70px;float: left;margin-left: 20px;
+}
+.mgoo-date-range #divBtnConfirm label{
+	height: 100%; top: 25%; position: relative;color: #0D766B;
+}
+.mgoo-grid-xs3{
+	float: left;
+	width: 33.33%;
+}
+
+.mgoo-datetime{
+	height: 100%;
+	float: left; 
+	background:url(../images/history/button10.png); 
+	background-size:100% 100% ; 
+	width: 30px;
+	margin-left: 10px;	
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.mgoo-datetime label{
+	height: 22px; top: 0px; position: relative;color: #0D766B;
+	font-weight: bold;
+	float: left;margin-left: 5px;
+}
+.mgoo-datetime span{
+	float: left; position: relative;margin-left: 5px;
+}
+.mgoo-datetime-colon{
+	height: 100%;float: left; border: 0px solid #01E0F8; width: 5px; margin-left: 5px; display: flex;justify-content:center;align-items:Center;
+}
+/* ----history end------*/
+
+
+/* ---------message list------*/
+
+.mgoo-message-list{
+	width: 100%;
+	border: 0px solid red;
+	padding-top: 10px;
+}
+.mgoo-message-item{
+	height: 120px;
+	width: 100%;
+	background: url(../images/message/messageitem.png);
+	background-size:100% 100%;
+	background-color: #000000; 
+}
+ 
+.mgoo-message-item-msgimg{
+	margin-left: 15px; height: 110px;border:  0px solid red;width: 42px;float: left;
+}
+.mgoo-message-item-msgimg img{
+	height: 40px;margin-top: 20px;
+}
+.mgoo-message-item-content{
+	width: 100%; 
+	height: 100%; 
+	padding-top: 10px; 
+}
+.mgoo-message-item-content div{
+	float: left;
+}
+.mgoo-message-item-content img{
+	height: 15px; 
+}
+.mgoo-message-item p{
+	line-height: 10px;color: #E5E7E8;
+}
+.mgoo-message-item-viewmap{
+	width: 55%; 
+}
+.mgoo-message-item-viewmap label{
+	color: white;
+	font-size: small;
+	margin-top: 10px;
+}
+.mgoo-message-item-viewmap img{
+	 
+}
+/* ---------message list end ------*/
+
+/* --------message-settings------- */
+.mgoo-message-type-div{
+	/*margin-left: 30px;height: 160px; */
+}
+.mgoo-message-setting-switch{
+	background: url(../images/message/settings/switch.png);
+	background-size: 100% 100%;
+	height: 20px; 
+	width: 40px;
+	float: left;
+	margin-left: 5px;
+} 
+.mgoo-message-setting-checkbox{
+	height: 20px; 
+	width: auto;
+	max-width: 200px;
+	/*background: url(../images/message/settings/checkbox.png);*/
+	background-size:100% 100% ;
+	margin-top: 3px;
+}
+.mgoo-message-setting-checkbox img{
+	height: 20px;width: 20px;   
+}
+.mgoo-checkbox-selected{
+	height: 20px;
+	width: auto;
+	max-width: 200px;
+	background-size:100% 100% ; 
+	margin-top: 3px;
+}
+/* .mgoo-checkbox-selected img{
+	height: 20px;width: 20px; 
+}*/
+/* --------message settings end--- */
+
+.mgoo-line{
+	background: url(../images/login/line2.png);
+	background-size:100% 100% ;
+	width: 100%;height: 3px; 
+}
+.mgoo-btn{
+	background: url(../images/service/button1.png);background-size:100% 100% ;border: 0px;
+}
+
+/* -----------usercenter-main.html--------*/
+
+.mgoo-usercenter-body{
+	background: url(../images/usercenter/body_bg.png);background-size:100% 100%;width: 100%;height:calc(100% - 123px); padding: 30px 30px;
+}
+
+.mgoo-usercenter-item{
+	height: 40px;
+	margin-top: 10px;
+}
+.mgoo-usercenter-item img{
+	height: 30px;margin-bottom: -5px;
+}
+.mgoo-usercenter-line{
+	background: url(../images/usercenter/line3.png);background-size:100% 100% ;
+	width: 100%;height: 3px; 
+}
+/* -----------usercenter-main.html  end--------*/
+
+
+
+/*-------------- device-manage.html ----------*/
+.mgoo-device-manage-input-div{
+	background: url(../images/usercenter/devicemanage/input_bg.png);
+	background-size: 100% 100%;height: 50px;width: 100%;
+	padding: 5px 30px;
+}
+.mgoo-device-manage-input-div input{
+	padding: 20px 40px;background-color: #2F3A43;border: 0px;
+}
+
+.mgoo-device-manage-add-button-div{
+	text-align: center;padding-top: 20px;
+}
+.mgoo-device-manage-add-button-div button{
+	background: url(../images/usercenter/devicemanage/next_button.png);background-size:100% 100% ;width: 80%; 
+	border: 0px; left: 10%;
+}
+
+.mgoo-device-manage-bottom-div{
+	padding-top: 20px; text-align: center;
+}
+.mgoo-device-manage-bottom-div button{
+	background-size:100% 100% ;
+	border: 0px;min-width: 80px;
+}
+.mgoo-device-manage-btn-submit{
+	background:url(../images/usercenter/devicemanage/button1.png);
+}
+.mgoo-device-manage-btn-switch{
+	background:url(../images/usercenter/devicemanage/button2.png); 
+}
+/*-------------device-manage.html end -----------*/
+
+/* ----------device-info.html--------------*/
+.mgoo-device-info-body{
+	height: 100%;width: 100%; 
+	background: url(../images/usercenter/devicemanage/adddevice_bg.png);
+	background-size:100% 100%;
+	padding: 20px 20px;
+	
+}
+.mgoo-device-info-row{
+	height: 40px;line-height: 40px;
+}
+.mgoo-device-info-row div{
+	height: 40px;
+}
+.mgoo-device-info-row input,textarea{
+	height:90%;background-color: #000000;
+}
+/* ----------device-info.html end--------------*/
+
+
+/*----------device-add-confirm-------------*/
+.mgoo-device-add-confirm-content{
+	background: url(../images/usercenter/devicemanage/dac-body.png);
+	background-size:100% 100% ;
+	height: 150px;
+	max-height: 200px;
+	min-height: 150px;
+	color: white;
+}
+.mgoo-device-add-confirm-content label{
+	padding-left: 20px;
+	margin-left: 20px ;
+}
+/*----------device-add-confirm end-------------*/
+
+/*----------------service-main.html------------------------*/
+.mgoo-service-lattice{
+	width: 100%;height: calc(100% - 200px);
+}
+.mui-android .mgoo-service-lattice{
+	height: calc(100% - 220px);
+}
+.mgoo-service-item{
+	background: url(../images/service/service-lattice-bg.png);
+	background-size:100% 100% ;
+	border-bottom: 1px solid #0A9DBC;
+	border-left:1px solid #0A9DBC ;
+	height: 100%;
+}
+#divRecharge{
+	border-top:1px solid #0A9DBC;
+	background: url(../images/service/button/item-recharge.png);
+	background-size:100% 100% ;
+}
+#divCarBuy{
+	border-top:1px solid #0A9DBC;
+	background: url(../images/service/button/item-carbuy.png);
+	background-size:100% 100% ; 
+}
+#divCarRepair{
+	border-top:1px solid #0A9DBC;border-right:1px solid #0A9DBC ;
+	background: url(../images/service/button/item-carrepair.png);
+	background-size:100% 100% ; 
+}
+#divLostCarCall{
+	background: url(../images/service/button/item-lostcarcall.png);
+	background-size:100% 100% ; 
+}
+#divChargingPile{
+	background: url(../images/service/button/item-chargingpile.png);
+	background-size:100% 100% ; 
+}
+#divFreePhone{
+	border-right:1px solid #049CDC ;
+	background: url(../images/service/button/item-freephone.png);
+	background-size:100% 100% ; 
+}
+/*----------------service-main.html end------------------------*/

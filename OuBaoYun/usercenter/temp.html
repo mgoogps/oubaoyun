@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title> 
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<!--<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/app.js" ></script>-->
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript">
+		 	/*mui.init({
+				swipeBack: true //启用右滑关闭功能
+			}); */
+			var scan = null;var addConfirm;
+			var InputStatus="scan";
+			var domready=false; 
+			function plusReady(){
+				if(!window.plus||!domready){
+					return;
+				}
+				/*addConfirm = mui.preload({
+					"id": 'device-add-confirm.html',
+					"url": 'device-add-confirm.html'
+				});*/
+				document.getElementById('btnBack').addEventListener('tap',function () {
+					console.log("back...");
+				    //history.back();
+				    plus.webview.currentWebview().close();
+				})
+				scan = new plus.barcode.Barcode('bcid');
+				scan.onmarked = onmarked;
+				//scan.onerror = onerror;
+			    scan.start({conserve:true,filename:'_doc/barcode/'});
+				document.getElementById("txtQR").addEventListener("keyup",function () {
+					InputStatus= "input";
+				});
+				document.getElementById('btnNext').addEventListener('tap',function () {
+ 
+					var qr = document.getElementById("txtQR").value
+				    if (qr.length < 6) {
+				    	plus.nativeUI.toast("请输入正确的IMEI号.")
+				     	//mui.toast("请输入正确的IMEI号.");
+				     	return;
+				    }
+				    VCCodeExist(qr);
+				})
+			
+				var self = plus.webview.currentWebview(); 
+				if(self.isback){
+					/*mui.oldBack = mui.back;
+					var backButtonPress = 0;
+					mui.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};*/
+				}
+			}
+			if(window.plus){
+				plusReady();
+			}else{
+				document.addEventListener('plusready', plusReady, false);
+			}
+			// 监听DOMContentLoaded事件
+			document.addEventListener('DOMContentLoaded', function(){
+				domready=true;
+				plusReady();
+			}, false);
+			function onmarked( type, result ) {
+				var text = '未知: ';
+				switch(type){
+					case plus.barcode.QR:
+					text = 'QR: ';
+					break;
+					case plus.barcode.EAN13:
+					text = 'EAN13: ';
+					break;
+					case plus.barcode.EAN8:
+					text = 'EAN8: ';
+					break;
+				} 
+				result = result.replace(/\n/g, ''); 
+				document.getElementById("txtQR").value=result;
+				InputStatus = "scan";
+				VCCodeExist(result );
+				//3秒后重新开启扫描
+				setTimeout(function () {
+					scan.start();
+				},2500); 
+			}
+			function onerror(){
+				mui.toast("条码识别失败")
+			}
+			
+			function VCCodeExist (imei) { 
+				return;
+				var a = new ajaxPar("VCCodeExist");
+				a.ajax({
+					url:"/ajax/DevicesAjax.asmx?op=VCCodeExist",
+					data:{serialnumber:imei},
+					success:function (res) {  
+						if (res.StatusCode == 200) {
+							scan.close(); 
+							res.imei=imei;
+							mui.fire(addConfirm,"onShow",{imei:res.imei,vc:res.Result,status:InputStatus});
+							addConfirm.show("zoom-fade-out");  
+						}else{
+							plus.nativeUI.toast(res.Message);
+						}
+					}
+				});
+			}
+			function historyBack(){
+				console.log("1111");
+				plus.webview.currentWebview().close(); 
+			}
+			document.addEventListener("onShow",function(e){ 
+				console.log("device-add.html onShow ...");
+				scan = new plus.barcode.Barcode('bcid');
+				scan.onmarked = onmarked;
+				scan.onerror = onerror;
+				scan.start(); 
+				plus.nativeUI.closeWaiting();
+			});
+		</script>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			*{
+				-webkit-user-select: none;
+			}
+			html,body{
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-content{
+				overflow:hidden;
+				background-color:#7E8288;
+				padding-top: 45px;
+			}
+			#bcid {
+				position: absolute;
+				top: 0px;
+				bottom: 44px;
+				text-align: center;
+				width: 100%;
+				border: 1px solid red;
+			}
+			.tip {
+				color: #FFFFFF;
+				font-weight: bold;
+				text-shadow: 0px -1px #103E5C;
+				width: 100%;
+				text-align: center;
+			}
+			</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mgoo-header" style="background-color: #1B1F22;">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mgoo-foot-color">添加设备</h1>
+		</header>
+		<div class="mui-content">
+			<div id="divSubtitle" class="mgoo-subtitle"></div> 
+		    <div id="" class="mgoo-device-manage-input-div" style="text-align: center;">
+		    	<input type="text" class="mgoo-foot-color" id="txtQR" value="" maxlength="25" placeholder="请扫描或输入IMEI号"/>
+		    	<strong style="margin-left: -20px;margin-right:-20px;">请根据产品包装盒扫描设备IMEI号条码</strong> <!--或者手动输入IMEI号-->
+		    </div> 
+			<div id= "bcid">
+				<div style="height:40%"></div>
+				<p class="tip">...载入中...</p>
+			</div>
+			<!--mgoo-device-manage-add-button-div-->
+			<div id="" class="mui-row" style="position: absolute;bottom: 2px;left: 2%;right: 2%;;"> 
+				<button type="button" id="btnBack" class="mui-btn mui-btn-danger mui-col-xs-6" onclick="historyBack()">返 回</button>  
+				<button type="button" id="btnNext" class="mui-btn mui-btn-blue mui-col-xs-6">下一步</button>  
+			</div>
+		</div>
+		</body>
+
+</html>

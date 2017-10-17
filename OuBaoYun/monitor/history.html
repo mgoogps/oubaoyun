@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>历史轨迹</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			#allmap {	
+		 	  	width:  100%;
+				position: absolute;
+				top:0px;	 
+				bottom: 0px; 
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+				border: 0px solid red;
+			}
+		 
+			.mui-bar .mui-pull-left .mui-icon {
+				padding-right: 5px;
+				font-size: 28px;
+			}
+			
+			.mui-bar .mui-btn {
+				font-weight: normal;
+				font-size: 17px;
+			}
+			
+			.mui-bar .mui-btn-link {
+				top: 1px;
+			} 
+			.mui-content img{
+				width: 100%;
+			}
+			 
+			
+		</style>
+	</head>
+
+	<body id="body" style="background-image: url(../images/history/BG.png)!important; background-size:100% 100% ;">
+		<header id="header" class="mui-bar mui-bar-transparent mgoo-header" style="border-bottom: 1px solid #8f8f94;  ">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a id="aSettings" class="mui-icon mui-icon-gear mui-pull-right"></a>
+			<h1 class="mui-title mgoo-foot-color">轨迹回放</h1>
+		</header>
+		<div class="mui-content" style="text-align: center;">
+			<div id="divDate" class="mgoo-date-range">
+				<br />
+				<span class="mgoo-foot-color-white" style="padding-top: 30px;">选择轨迹时间范围</span>
+				<div id="divChooseDay" >
+					<div id="divToday" class="mgoo-grid-xs3 mgoo-foot-color-white" style="padding-left: 25px;">
+						<label>今天</label><input name="radio" type="radio" value="1" checked="">
+					</div>
+					<div id="divYesterDay" class="mgoo-grid-xs3 mgoo-foot-color-white">
+						<label>昨天</label><input name="radio" type="radio" value="2">
+					</div>
+					<div id="divCustom" class="mgoo-grid-xs3 mgoo-foot-color-white" style="padding-right: 30px;">
+						<label>自定义</label><input name="radio" type="radio" value="3">
+					</div>  
+				</div>
+				<div id="divChooseDate">
+					<div id="divStartDate" style=" height: 24%;">
+						<div id="" class="mgoo-foot-color-white" style="float: left;height: 100%;">
+							<label style="height: 100%; top: 30%; position: relative; ">开始：</label> 
+						</div>
+						<div id="" class="mgoo-datetime" name="divYears" style="width:43px;margin-left:0px;">
+							<span style="top:-4px;margin-left: 2px;"></span>
+							<label style="margin-left: 2px;"></label> 
+							<span style="top:2px;margin-left: 2px;"></span>
+						</div>
+						<div id="" class="mgoo-datetime" name="divMonth">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div id="divStartDay"  class="mgoo-datetime" name="divDay">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div id="" class="mgoo-datetime" style="margin-left: 20px;" name="divHours">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div class="mgoo-datetime-colon">
+							<img src="../images/history/button08.png" />
+						</div>
+						<div id="" class="mgoo-datetime" style="margin-left: 5px;" name="divMinutes">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+					</div>
+					<div id="divEndDate" style=" height: 24%; margin-top: 45px;">
+						<div id="" class="mgoo-foot-color-white" style="float: left;height: 100%;">
+							<label style="height: 100%; top: 30%; position: relative; ">结束：</label> 
+						</div>
+						<div id="" class="mgoo-datetime " name="divYears" style="width: 43px;margin-left: 0px;">
+							<span style="margin-left: 2px;top: -4px; "></span>
+							<label style="margin-left: 2px;"></label>
+							<span style="margin-left: 2px;top: 2px;"></span>
+						</div>
+						<div id="" class="mgoo-datetime" name="divMonth">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div id="" class="mgoo-datetime" name="divDay">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div id="" class="mgoo-datetime" style="margin-left: 20px;" name="divHours">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+						<div class="mgoo-datetime-colon">
+							<img src="../images/history/button08.png" />
+						</div>
+						<div id="" class="mgoo-datetime" style="margin-left: 5px;" name="divMinutes">
+							<span style="top:-4px;"></span>
+							<label></label> 
+							<span style="top: 2px;"></span>
+						</div>
+					</div>
+					<div id="divButtons">
+						<div id="divBtnCancel" >
+							<label>取消</label>	
+						</div>
+						<div id="divBtnConfirm" >
+						 	<label>确认</label>	
+						</div>
+					</div>
+				</div>
+			</div>
+		    <div id="allmap"></div>
+		    
+		    <div id="footer" style="position: fixed;bottom: 10px;left: 20px; right: 20px; height: 100px;border: 0px solid red; text-align: center;">
+		    	<div id="divSpeedLess" style="background: url(../images/history/less.png);background-size:100% 100% ;height: 100%;width: 33%;float: left;"> 
+		    	</div>
+		    	<div id="divPlay" style="background: url(../images/history/play.png);background-size:100% 100% ;height: 100%;width: 33%;float: left;" > 
+		    	</div>
+		    	<div id="divSpeedPlus" style="background: url(../images/history/plus.png);background-size:100% 100% ;height: 100%;width: 33%;float: left;"> 
+		    	</div>
+		    </div>
+		</div>
+		<audio id="audioMp3">
+			<source src="../images/audio/S011HS2.mp3"></source>
+		</audio>
+		<audio id="audioMp32">
+			<source src="../images/audio/S011HS2.mp3"></source>
+		</audio>
+		<audio id="audioMp33">
+			<source src="../images/audio/S011HS2.mp3"></source>
+		</audio>
+		<audio id="audioMp34">
+			<source src="../images/audio/S011HS2.mp3"></source>
+		</audio>
+		<audio id="audioMp35">
+			<source src="../images/audio/S011HS2.mp3"></source>
+		</audio>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SAbCayX7PG5UMsqW6d1DZ9K0"></script>
+		<script type="text/javascript" src="../js/map/map.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+		<script type="text/javascript" src="../js/map/BDLuShu.js" ></script>
+		<script type="text/javascript" src="../js/map/history.js" ></script> 
+	</body>
+
+</html>

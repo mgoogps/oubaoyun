@@ -1,0 +1,762 @@
+{
+  "main.html": {
+    "resources": [
+      "images/main/BG01.png",
+      "css/mui.min.css",
+      "images/main/button/g.png",
+      "images/main/button/\u0011.png",
+      "images/main/button/ý.png",
+      "images/main/button/\rý.png",
+      "images/main/banner/ný04.png",
+      "images/main/banner/ný02.png",
+      "css/mgoo.css",
+      "images/main/images/BG_01.gif",
+      "images/main/images/BG_02.gif",
+      "images/main/banner/ný03.png",
+      "images/main/banner/ný01.png",
+      "images/main/banner/banner2.png",
+      "images/main/banner/banner4.png",
+      "images/main/banner/banner3.png",
+      "images/main/banner/banner1.png",
+      "js/mui.min.js",
+      "images/main/images/BG_04.gif",
+      "js/app.js",
+      "images/main/button/monitor.png",
+      "images/main/button/statistics.png",
+      "images/main/button/status-move.png",
+      "images/main/images/BG_12.png",
+      "images/main/button/service.png",
+      "images/main/button/mycenter.png",
+      "images/main/images/BG_05.png",
+      "images/main/images/BG_07.gif",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_04.png",
+      "images/main/images/BG_01.png",
+      "images/main/button/gjhf.png",
+      "images/main/button/jiefang.png",
+      "images/main/images/BG_08.png",
+      "images/main/button/dzwl.png",
+      "images/main/button/ssgz.png",
+      "images/main/button/sbxx.png",
+      "images/main/button/shache.png",
+      "fonts/mui.ttf",
+      "images/main/button/g.png",
+      "images/main/button/\u0011.png",
+      "images/main/button/ý.png",
+      "images/main/button/\rý.png",
+      "images/main/banner/ný04.png",
+      "images/main/banner/ný02.png",
+      "images/main/banner/ný03.png",
+      "images/main/banner/ný01.png",
+      "fonts/mui-icons-extra.ttf",
+      "monitor/monitor-main.html",
+      "css/icons-extra.css",
+      "images/main/button/g.png",
+      "images/main/button/ý.png",
+      "/images/main/images/BG_01.png",
+      "js/basic/main.js",
+      "js/basic/public.js",
+      "js/basic/update.js",
+      "images/main/images/offline.png",
+      "images/main/images/online.png",
+      "images/main/images/expired.png",
+      "js/basic/ajax.js",
+      "images/main/button/status-offline.png",
+      "images/main/button/status-still.png",
+      "images/main/button/shefang.png",
+      "images/main/button/weijihuo2.png",
+      "images/main/button/fenceon1.png",
+      "images/main/button/fenceon2.png",
+      "images/main/button/status-notused.png",
+      "images/main/button/status-arrears.png"
+    ],
+    "refer": [
+      "setting.html",
+      "service/service-main.html",
+      "usercenter/usercenter-main.html",
+      "statistics/statistics-main.html",
+      "monitor/monitor-main.html",
+      "monitor/history.html",
+      "monitor/nav_transparent.html",
+      "monitor/message-list.html",
+      "monitor/tracking.html",
+      "monitor/device-info.html",
+      "service-main.html",
+      "statistics-main.html",
+      "usercenter-main.html",
+      "usercenter/device-add.html",
+      "monitor/message-view.html"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.enterfocus.js",
+      "fonts/mui.ttf",
+      "images/sinaweibo.png",
+      "images/weixin.png",
+      "images/qq.png",
+      "js/basic/md5.js",
+      "js/basic/update.js",
+      "images/login-logo.png",
+      "images/button-login.png",
+      "images/button-reg.png",
+      "js/basic/public.js"
+    ],
+    "refer": [
+      "main.html",
+      "login1.html",
+      "reg.html",
+      "unlock.html"
+    ]
+  },
+  "setting.html": {
+    "resources": [
+      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "libs/easymob-webim-sdk/json2.js",
+      "libs/easymob-webim-sdk/jquery-1.11.1.js",
+      "js/mui.locker.js",
+      "js/feedback.js",
+      "css/feedback-page.css",
+      "js/feedback-page.js",
+      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+      "js/mui.view.js",
+      "js/mui.min.js",
+      "js/app.js"
+    ],
+    "refer": []
+  },
+  "monitor/monitor-main.html": {
+    "resources": [
+      "images/main/banner/banner4.png",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_04.png",
+      "images/main/button/gjhf.png",
+      "images/main/button/jiefang.png",
+      "images/main/images/BG_08.png",
+      "images/main/button/dzwl.png",
+      "images/main/banner/banner1.png",
+      "images/main/button/ssgz.png",
+      "images/main/button/status-move.png",
+      "images/main/images/BG_05.png",
+      "images/main/banner/banner2.png",
+      "images/main/button/sbxx.png",
+      "images/main/banner/banner3.png",
+      "images/main/button/shache.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/mgoo.css",
+      "images/main/button/fenceon1.png",
+      "js/app.js",
+      "js/basic/main.js",
+      "js/basic/ajax.js",
+      "js/basic/public.js",
+      "js/basic/update.js",
+      "images/main/button/shefang.png",
+      "images/main/button/weijihuo2.png",
+      "images/main/button/fenceon2.png",
+      "images/main/button/status-still.png",
+      "images/main/images/offline.png",
+      "images/main/images/online.png",
+      "images/main/images/expired.png",
+      "images/main/button/status-arrears.png",
+      "images/main/button/status-offline.png",
+      "images/main/images/notused.png",
+      "images/loading.gif",
+      "/images/public/popup_bg.png",
+      "images/public/popup_bg.png",
+      "/images/public/button5.png",
+      "images/public/button5.png",
+      "images/main/images/driving.png",
+      "images/main/images/content_status_bg.png",
+      "images/main/images/subtitle.png",
+      "images/main/images/line4.png",
+      "images/main/button/status-notused.png"
+    ],
+    "refer": [
+      "monitor/tracking.html",
+      "monitor/history.html",
+      "monitor/device-info.html",
+      "usercenter/device-add.html"
+    ]
+  },
+  "service/service-main.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/service/body_bg.png",
+      "images/main/images/BG_02.png",
+      "css/mgoo.css",
+      "images/service/user.png",
+      "images/service/line1.png",
+      "images/service/bottom_bg.png",
+      "images/service/button1.png",
+      "images/main/images/subtitle.png",
+      "images/service/button/item-chargingpile.png",
+      "images/service/service-lattice-bg.png",
+      "images/service/button/item-carrepair.png",
+      "images/service/button/item-carbuy.png",
+      "images/service/button/item-recharge.png",
+      "images/service/button/item-freephone.png",
+      "images/service/button/item-lostcarcall.png",
+      "images/service/subimg.png",
+      "images/main/banner/banner2.png",
+      "images/main/banner/banner4.png",
+      "images/main/banner/banner3.png",
+      "images/main/banner/banner1.png"
+    ],
+    "refer": []
+  },
+  "statistics/statistics-main.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "images/service/body_bg.png",
+      "css/mgoo.css",
+      "images/main/images/BG_02.png",
+      "images/main/images/subtitle.png"
+    ],
+    "refer": []
+  },
+  "usercenter/usercenter-main.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "images/usercenter/subtitle.jpg",
+      "images/service/body_bg.png",
+      "css/mgoo.css",
+      "images/main/images/BG_02.png",
+      "images/login-logo.png",
+      "images/usercenter/logo.png",
+      "images/login/line2.png",
+      "images/usercenter/icon2.png",
+      "images/usercenter/devicemanage.png",
+      "images/usercenter/line3.png",
+      "images/usercenter/feedback.png",
+      "images/usercenter/moresettings.png",
+      "images/usercenter/operationguide.png",
+      "images/usercenter/resetpassword.png",
+      "js/basic/public.js",
+      "images/main/images/subtitle.png",
+      "images/usercenter/subtitle.png",
+      "images/usercenter/body_bg.png",
+      "images/usercenter/head.png",
+      "js/app.js",
+      "images/usercenter/topbg.png"
+    ],
+    "refer": [
+      "usercenter/device-manage.html",
+      "usercenter/temp.html",
+      "usercenter/user-info.html",
+      "usercenter/group-manage.html",
+      "usercenter/scan.html",
+      "usercenter/settings.html"
+    ]
+  },
+  "tab-webview-main.html": {
+    "resources": [
+      "tab-webview-subpage-about.html",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/main/images/BG_01.png"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html"
+    ]
+  },
+  "monitor/history.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/map/map.js",
+      "images/main/banner/banner2.png",
+      "images/main/images/history/BG.png",
+      "css/mgoo.css",
+      "images/main/images/history/header.png",
+      "images/main/images/history/BG01.png",
+      "images/main/images/history/button10.png",
+      "images/main/images/history/button06.png",
+      "images/main/images/history/button08.png",
+      "images/main/images/history/button09.png",
+      "images/audio/choosedate.mp3",
+      "images/audio/266.mp3",
+      "images/audio/S011HS2.mp3",
+      "js/map/history.js",
+      "images/main/images/history/button02.png",
+      "images/main/images/history/button05.png",
+      "images/main/images/history/button04.png",
+      "images/main/images/history/button03.png",
+      "images/main/images/history/plus.png",
+      "images/main/images/history/play.png",
+      "images/main/images/history/less.png",
+      "images/main/images/history/pause.png",
+      "images/history/button10.png",
+      "images/history/play.png",
+      "images/history/button08.png",
+      "images/history/button09.png",
+      "images/history/pause.png",
+      "images/history/BG.png",
+      "images/history/less.png",
+      "images/history/button06.png",
+      "images/history/BG01.png",
+      "images/history/plus.png",
+      "js/basic/ajax.js",
+      "js/app.js",
+      "js/basic/public.js",
+      "js/map/BDLuShu.js",
+      "images/maps/point@24.png"
+    ],
+    "refer": []
+  },
+  "monitor/nav_transparent.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "monitor/message-list.html": {
+    "resources": [
+      "css/mgoo.css",
+      "images/main/images/message/messageitem.png",
+      "css/mui.min.css",
+      "images/main/images/message/BG.png",
+      "images/main/images/message/msg.png",
+      "images/main/images/message/viewmap.png",
+      "images/main/images/message/checkbox.png",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "images/main/images/message/\t.01.png",
+      "images/main/images/message/button.png",
+      "js/devices/message.js",
+      "images/message/viewmap.png",
+      "images/message/checkbox.png",
+      "images/message/messageitem.png",
+      "images/message/button.png",
+      "images/message/BG.png",
+      "images/message/msg.png",
+      "images/main/images/message/\t.01.png",
+      "js/basic/public.js",
+      "images/message/settings/checkbox.png",
+      "images/public/checkbox-true.png",
+      "images/public/checkbox-false.png",
+      "js/app.js",
+      "js/basic/ajax.js"
+    ],
+    "refer": [
+      "monitor/message-settings.html",
+      "monitor/message-view.html"
+    ]
+  },
+  "monitor/message-settings.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/message/settings/BG.png",
+      "css/mgoo.css",
+      "images/message/settings/\t.01.png",
+      "images/message/settings/\t.02.png",
+      "images/message/settings/\t.03.png",
+      "images/message/settings/on.png",
+      "images/message/settings/off.png",
+      "images/message/settings/switch.png",
+      "images/public/checkbox.png",
+      "js/basic/public.js",
+      "images/message/settings/checkbox.png",
+      "fonts/mui.ttf",
+      "images/public/checkbox1.png",
+      "images/public/checkbox-false.png",
+      "images/public/checkbox-true.png",
+      "images/message/settings/msg_setting_bg.png",
+      "js/devices/message.js",
+      "js/basic/ajax.js",
+      "js/app.js"
+    ],
+    "refer": []
+  },
+  "monitor/tracking.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/map/map.js",
+      "js/basic/public.js",
+      "js/app.js",
+      "js/basic/ajax.js",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "images/maps/point@24.png",
+      "css/mgoo.css",
+      "images/main/tracking/renche.png",
+      "images/main/tracking/street.png",
+      "images/main/tracking/type2.png",
+      "js/devices/tracking.js",
+      "images/main/tracking/type1.png",
+      "images/main/tracking/cars.png",
+      "images/main/tracking/NowLocation.png"
+    ],
+    "refer": [
+      "monitor/street-scape.html"
+    ]
+  },
+  "monitor/device-info.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "images/usercenter/devicemanage/button2.png",
+      "images/usercenter/devicemanage/button1.png",
+      "images/usercenter/devicemanage/adddevice_bg.png",
+      "js/basic/public.js",
+      "css/mgoo.css",
+      "js/app.js",
+      "js/basic/ajax.js",
+      "images/usercenter/devicemanage/next_button.png",
+      "images/main/images/subtitle.png",
+      "images/public/checkbox-false.png",
+      "images/public/checkbox-true.png",
+      "js/devices/message.js"
+    ],
+    "refer": []
+  },
+  "login1.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/head.png",
+      "fonts/mui.ttf",
+      "images/button-login1.png",
+      "js/app.js",
+      "js/basic/md5.js",
+      "css/mgoo.css",
+      "images/login/line2.png",
+      "images/logo3.png",
+      "js/basic/update.js"
+    ],
+    "refer": [
+      "main.html",
+      "forget_password.html"
+    ]
+  },
+  "reg.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/mgoo.css",
+      "images/login/yzm.png",
+      "reg.html",
+      "images/login/line2.png",
+      "fonts/mui.ttf",
+      "images/button-reg.png"
+    ],
+    "refer": [
+      "reg.html"
+    ]
+  },
+  "service-main.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mgoo.css",
+      "css/mui.min.css",
+      "js/basic/public.js"
+    ],
+    "refer": [
+      "main.html"
+    ]
+  },
+  "usercenter-main.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "images/main/button/statistics.png",
+      "images/main/images/BG_12.png",
+      "css/mgoo.css",
+      "images/main/button/service.png",
+      "images/main/button/monitor.png",
+      "images/main/button/mycenter.png",
+      "css/mui.min.css",
+      "js/basic/public.js",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_01.png"
+    ],
+    "refer": []
+  },
+  "statistics-main.html": {
+    "resources": [
+      "js/mui.min.js",
+      "images/main/button/statistics.png",
+      "images/main/button/service.png",
+      "images/main/button/monitor.png",
+      "images/main/button/mycenter.png",
+      "js/basic/public.js",
+      "images/main/images/BG_12.png",
+      "css/mgoo.css",
+      "css/mui.min.css",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_01.png"
+    ],
+    "refer": [
+      "usercenter-main.html",
+      "service-main.html"
+    ]
+  },
+  "index.html": {
+    "resources": [
+      "images/main/banner/banner4.png",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_04.png",
+      "images/main/button/gjhf.png",
+      "images/main/button/jiefang.png",
+      "images/main/images/BG_08.png",
+      "images/main/banner/banner1.png",
+      "images/main/button/ssgz.png",
+      "images/main/button/status-move.png",
+      "images/main/images/BG_05.png",
+      "css/mgoo.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/main/button/sbxx.png",
+      "images/main/banner/banner3.png",
+      "images/main/button/shache.png",
+      "tab-webview-subpage-about.html",
+      "fonts/mui.ttf",
+      "service-main.html",
+      "monitor/monitor-main.html",
+      "images/main/images/BG_01.png",
+      "images/main/button/monitor.png",
+      "images/main/button/service.png",
+      "images/main/button/statistics.png",
+      "images/main/button/mycenter.png",
+      "images/main/images/BG_12.png"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html",
+      "usercenter-main.html",
+      "service-main.html",
+      "statistics-main.html",
+      "service/service-main.html",
+      "monitor/monitor-main.html",
+      "usercenter/usercenter-main.html",
+      "statistics/statistics-main.html"
+    ]
+  },
+  "tab-webview-subpage-about.html": {
+    "resources": [
+      "css/mui.min.css",
+      "css/mgoo.css",
+      "images/main/banner/banner2.png",
+      "images/main/banner/banner4.png",
+      "images/main/images/BG_02.png",
+      "images/main/images/BG_04.png",
+      "images/main/banner/banner3.png",
+      "images/main/banner/banner1.png",
+      "js/mui.min.js",
+      "images/main/button/gjhf.png",
+      "images/main/button/jiefang.png",
+      "images/main/images/BG_08.png",
+      "images/main/button/ssgz.png",
+      "images/main/button/fenceon1.png",
+      "images/main/images/BG_05.png",
+      "images/main/button/sbxx.png",
+      "images/main/button/shache.png"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-contact.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": []
+  },
+  "tab-webview-subpage-chat.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "usercenter/device-manage.html": {
+    "resources": [
+      "images/usercenter/devicemanage/devicelist_bg.png",
+      "images/usercenter/devicemanage/add.png",
+      "images/usercenter/devicemanage/delete.png",
+      "images/usercenter/devicemanage/button2.png",
+      "js/mui.min.js",
+      "images/usercenter/devicemanage/button1.png",
+      "css/mui.min.css",
+      "images/usercenter/devicemanage/adddevice_bg.png",
+      "css/mgoo.css",
+      "images/usercenter/line3.png",
+      "fonts/mui.ttf",
+      "js/basic/public.js",
+      "images/usercenter/carlocalization.png",
+      "images/main/images/subtitle.png",
+      "js/app.js",
+      "js/basic/ajax.js"
+    ],
+    "refer": [
+      "usercenter/scan.html",
+      "usercenter/device-add.html",
+      "monitor/device-info.html"
+    ]
+  },
+  "usercenter/scan.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/basic/common.js"
+    ],
+    "refer": []
+  },
+  "usercenter/device-add.html": {
+    "resources": [
+      "images/usercenter/devicemanage/input_bg.png",
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mgoo.css",
+      "images/usercenter/devicemanage/next_button.png",
+      "js/app.js",
+      "js/basic/ajax.js",
+      "images/main/images/subtitle.png"
+    ],
+    "refer": [
+      "usercenter/device-add-confirm.html",
+      "usercenter/device-add.html"
+    ]
+  },
+  "usercenter/temp.html": {
+    "resources": [
+      "images/service/body_bg.png",
+      "css/mgoo.css",
+      "js/mui.min.js",
+      "images/main/images/BG_02.png",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "images/main/images/subtitle.png",
+      "js/basic/common.js"
+    ],
+    "refer": []
+  },
+  "monitor/message-view.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "js/basic/ajax.js",
+      "css/mui.min.css",
+      "js/map/map.js",
+      "js/basic/public.js",
+      "images/maps/point@24.png",
+      "css/mgoo.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "usercenter/device-add-confirm.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/main/images/subtitle.png",
+      "css/mgoo.css",
+      "images/usercenter/devicemanage/dac-body.png",
+      "images/usercenter/line3.png",
+      "js/app.js",
+      "js/basic/ajax.js",
+      "js/basic/public.js"
+    ],
+    "refer": [
+      "main.html"
+    ]
+  },
+  "forget_password.html": {
+    "resources": [
+      "images/login/yzm.png",
+      "js/app.js",
+      "css/mgoo.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/usercenter/devicemanage/next_button.png",
+      "js/basic/public.js"
+    ],
+    "refer": [
+      "login1.html"
+    ]
+  },
+  "usercenter/user-info.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/usercenter/devicemanage/next_button.png",
+      "images/usercenter/devicemanage/adddevice_bg.png",
+      "js/app.js",
+      "js/basic/ajax.js",
+      "css/mgoo.css",
+      "fonts/mui.ttf",
+      "images/main/images/subtitle.png"
+    ],
+    "refer": []
+  },
+  "usercenter/group-manage.html": {
+    "resources": [
+      "css/mgoo.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/main/images/subtitle.png",
+      "js/app.js",
+      "js/basic/ajax.js"
+    ],
+    "refer": []
+  },
+  "usercenter/settings.html": {
+    "resources": [
+      "css/mgoo.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "images/main/images/subtitle.png"
+    ],
+    "refer": []
+  },
+  "unlock.html": {
+    "href": "unlock.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "js/mui.locker.js",
+      "js/app.js"
+    ],
+    "refer": [
+      "login.html",
+      "main.html"
+    ],
+    "priority": 0
+  },
+  "monitor/street-scape.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mgoo.css"
+    ]
+  }
+}

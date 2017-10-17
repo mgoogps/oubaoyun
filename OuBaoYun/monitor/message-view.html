@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			#allmap {	
+		 	  	width:  100%;
+				position: absolute;
+				top:0px;	 
+				bottom: 0px; 
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+				border: 0px solid red;
+			}
+			#streetMap{				
+			}
+			#bdMap{				
+				width: 100%;
+				position: absolute;
+				height: 50%;
+				bottom: 0px;				 
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+				border: 0px solid red;
+			}
+			.WindowStyle{
+				background-color: #FFFAFA	;						
+		        position: relative;
+		        border:1px solid #A6A6A6;	 
+                filter:alpha(opacity=60);  
+		        -moz-opacity:0.5; 
+		        opacity: 0.9;   
+		        border-radius:5px 5px 5px 5px; 
+			}
+			.WindowStyle:after{
+		        content:'';
+		        position:absolute;
+		        border:1px solid #A6A6A6;
+		        border:13px solid transparent;
+		        border-top-color:#A6A6A6;	         
+		        top:100%;
+		        margin-left:110px; 
+	   	    }
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mgoo-header mui-bar-nav mui-bar-transparent">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">报警详细</h1>
+		</header>
+		<div class="mui-content" style="height: 100%;">
+		    <iframe src="" width="100%" height="50%" id="StreetMap" style="position: fixed;  bottom: 50%;"></iframe>
+			
+			<div id="bdMap"></div>			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SAbCayX7PG5UMsqW6d1DZ9K0"></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+	
+		<script type="text/javascript" src="../js/map/map.js" ></script>
+		<script type="text/javascript">
+			var mgoo ; 
+			var ClickStutus=0,infoBox=null;
+			mui.init();
+			mui.ready(function(){
+				mgoo = new mgMap("bdMap","BAIDU");
+				mgoo.showNavigation=false;
+				mgoo.DEFAULT_ZOOM = 15;		
+				mgoo.loadMap(); 
+			})
+			mui.plusReady(function(){
+				var self = plus.webview.currentWebview(); 
+				GetMessageDetail(self.ExceptionID);
+			});
+			function GetMessageDetail (ExceptionID) {
+				var $=new ajaxPar("GetMessageInfoByID"); 
+				$.ajax({
+			  		url:"/ajax/MessageAjax.asmx?op=GetMessageInfoByID",
+			  		data:{exceptionid:ExceptionID},				
+					success:function(res){			  				
+						var OLat=res.OLat;
+						var OLng=res.OLng;
+						StreetPoint(OLat,OLng);
+						if(parseInt(res.OLat) < 1 || parseInt(res.OLng) < 1){
+							var btnArray = ['确定'];
+							mui.confirm('未获取到定位信息', '提示', btnArray, function(e) {
+								if (e.index == 0) {
+									mui.back(); 									
+								} 								
+							},'div')	
+							return false;
+						}
+						 
+						mgoo.setCenter(OLng,OLat);
+						var marker = new Marker({
+					        map: mgoo.map, mapType: mgoo.mapType, lng:OLng , lat:OLat,
+						 }); 
+			 			marker.show({ showTitle: false, titleText: res.DeviceName,icon: "../images/maps/point@24.png"}); 
+					
+						marker.addEventListener("click",function(){			
+							if(ClickStutus==0){
+								infoBox.remove();
+				    			mgoo.clearOverlays({clearMarker:[infoBox]});
+				    			ClickStutus=1;
+				    			return;
+							}else if(ClickStutus==1){								
+								document.getElementById("divInfoWindow").parentNode.style.display="block";
+					    		createWindowInfo(res,marker);	
+					    		ClickStutus=0;
+					    		return ;
+							}
+						})
+						createWindowInfo(res,marker); 
+			  		} 
+				})
+			}
+			function StreetPoint (OLat,OLng) { 
+				var MapURL="https://apis.map.qq.com/ws/coord/v1/translate?locations="+OLat+","+OLng+"&type=3&key=d84d6d83e0e51e481e50454ccbe8986b";
+				mui.ajax(MapURL,{
+					dataType:'json',//服务器返回json格式数据
+					type:'get',//HTTP请求类型
+					headers:{'Content-Type':'application/json'},
+					success:function(data){
+						var lng = data.locations[0].lng;
+						var lat = data.locations[0].lat;
+						var url = "http://apis.map.qq.com/uri/v1/streetview?location=" + lat+ "," + lng + "&heading=236&pitch=8&zoom=1&referer=mgoogps";
+			   			document.getElementById("StreetMap").src=url;						   			
+					}
+				});
+			}
+			function createWindowInfo (d,marker)
+			{
+				var height = "150px",width="250px";			
+				var html = [];
+				html.push("<div class='WindowStyle'>");		
+				html.push("<div style='margin-top:8px;'><font style='font-size:17px;margin-left:10px;'>"+d.DeviceName+"</font></div>  <hr/>  ");
+				html.push("<div style='font-weight:bold;'>&nbsp<span>报警类型："+d.Message+"</span></div>")
+				html.push("<div style='font-weight:bold;'>&nbsp<span>报警时间:"+d.Created+"</span></div>")
+				html.push("<div style='font-weight:bold;'>&nbsp<span>经纬度："+ parseFloat(d.OLat).toFixed(5)+","+parseFloat(d.OLat).toFixed(5)+"</span></div>")
+				html.push("<div style='font-weight:bold;'>&nbsp<span>地址:"+d.Address+"</span></div>")
+				html.push("</div>")
+			    infoBox = new InfoWindow({marker: marker});
+				infoBox.map = mgoo.map; 
+				infoBox.addInfoWindow({
+			        style: { 
+			            fontSize: "18px",  height: height, width:  width, "-moz-border-radius": "15px", "border-radius": "15px"
+			        }, html: html.join(''), point: mgoo.Point(d.OLng,d.OLat) 
+			    });  
+			}
+		</script>
+	</body>
+
+</html>

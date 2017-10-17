@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/mgoo.css" />
+		<link href="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			#allmap {	
+		 	  	width:  100%;
+				position: absolute;
+				top:0px;	 
+				bottom: 0px; 
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+				border: 0px solid red;
+			} 
+			/*.maplibTcBtn_mobile{ 
+				background:'';
+				background-image: url(http://www.iconpng.com/png/phone-set-full/gps9.png);
+				background-size:100% 100% ;
+			}
+			.maplibTcBtnOff_mobile{
+				background-image: url(http://www.iconpng.com/png/125-shaded-icons/apple-app-store-icon.png);
+				background-size:100% 100% ;
+			} */
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-transparent mgoo-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">实时跟踪</h1>
+		</header>
+		<div class="mui-content" style="height: 100%;">
+			<div id="allmap"></div>
+			<div id="outCircle">
+				<div id="SpeedCircle">
+			 		0 
+				 
+					
+				</div> 
+			</div>
+			
+			<div style="position:absolute;right:10px;top:90px;width:30px;height:auto;z-index:1000;line-height:10px;border:0px solid blue;z-index: 100;" id="mapPlugin">
+				<!--地图类型 （卫星or地图）-->
+		        <div id ="divMapType" style="background-image:url(../images/main/tracking/type2.png);background-size:100% 100%; width:30px;height:30px;cursor:pointer;border:0px solid blue"></div>
+		        <!--街景(使用腾讯街景)-->
+		        <div id ="divMapStreet" style="background-image:url('../images/main/tracking/street.png');background-size:100% 100%; width:30px;margin-top:5px;height:30px;cursor:pointer;border:0px solid blue"></div> 
+		   </div>		  	
+			<div id="divPersonCar" class="distance">	
+				<div id ="DistanceText" style="background-image:url(../images/main/tracking/renche.png);background-size:100% 100%; width:40px;height:40px;cursor:pointer;border:0px solid blue"></div> 		
+			</div> 
+			<div class="fontdistance">
+				<span style="color: red; font-size: 18px;margin-left: 8px; bottom: 2px" class="mui-hidden" id="DistanceWire" ></span>
+			</div>	
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/basic/ajax.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SAbCayX7PG5UMsqW6d1DZ9K0"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+		<script type="text/javascript" src="../js/basic/public.js" ></script>
+	
+		<script type="text/javascript" src="../js/map/map.js" ></script>
+		
+		<script type="text/javascript" src="../js/devices/tracking.js" ></script>
+	</body>
+
+</html>
