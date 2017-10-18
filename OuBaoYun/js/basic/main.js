@@ -302,7 +302,7 @@ function SetMainImg (res,StatusTimeInfo) {
 	var sfcf = csl.getElementsByTagName("span")[0]; //设防解防
  	var battery = csr.getElementsByTagName("span")[0]; //主电
  
-	if(res.DataContext){ 
+	if(res.DataContext){  
 		
 	 	
 		var context = res.DataContext.split('-'); 
