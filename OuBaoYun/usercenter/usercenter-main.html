@@ -56,14 +56,13 @@
 					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
 				</div>
 				<div class="mgoo-usercenter-line" style=""></div>
-				
+				-->
 				<div id="" class="mgoo-usercenter-item">
 					<img src="../images/usercenter/moresettings.png"/>
-					<label>系统设置</label>
+					<label>修改密码</label>
 					<img src="../images/usercenter/icon2.png" style="float: right;"/> 
 				</div>
-				<div class="mgoo-usercenter-line" style=""></div>-->
-				 
+				<div class="mgoo-usercenter-line" style=""></div>
 		</div>
 		 
 	</div>
@@ -94,7 +93,9 @@
 					openWindow("settings.html");
 				}else if(text.indexOf("续费管理") > 0){
 					//openWindow("barcode_scan.html");	
-				}else{ 
+				}else if(text.indexOf("修改密码")){
+					openWindow("update-password.html")
+				}else{
 					//openWindow("temp.html",{title:this.innerText});
 				}
 				//mui.fire(temp,"onLoading",{title:this.innerText});

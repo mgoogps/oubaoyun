@@ -520,7 +520,8 @@
 					"images/service/button/item-carrepair.png",
 					"images/service/button/item-lostcarcall.png",
 					"images/service/button/item-chargingpile.png",
-					"images/service/button/item-freephone.png"
+					"images/service/button/item-freephone.png",
+					"images/main/images/middle_bg.png"
 				],
 				"refer": [
 					"monitor/tracking.html",
@@ -632,7 +633,8 @@
 					"usercenter/user-info.html",
 					"usercenter/group-manage.html",
 					"usercenter/scan.html",
-					"usercenter/settings.html"
+					"usercenter/settings.html",
+					"usercenter/update-password.html"
 				],
 				"priority": 0
 			},
@@ -1504,6 +1506,21 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mgoo.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"usercenter/update-password.html": {
+				"resources": [
+					"css/mui.min.css",
+					"images/usercenter/devicemanage/next_button.png",
+					"images/usercenter/devicemanage/adddevice_bg.png",
+					"js/app.js",
+					"css/mgoo.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"js/basic/ajax.js",
+					"images/main/images/subtitle.png"
 				],
 				"refer": [],
 				"priority": 0

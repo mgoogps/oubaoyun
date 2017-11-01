@@ -64,7 +64,7 @@ html,body{
 	background: url(../images/main/images/content_status_bg.png) ;
 	background-size:100% 100% ;
 	/*height: 140px;*/
-	height: 30%;
+	height: 25%;
 	text-align: center!important; 
 	overflow:hidden;
 }
@@ -75,14 +75,14 @@ html,body{
 	 width: 100%;border: 0px solid #01E0F8;  
 }
 .mgoo-button-status1 div{ 
-	width: 33.33%;height:100%; background: url(../images/main/images/BG_05.png);background-size:100% 100%;float: left; 
+	height:100%; background: url(../images/main/images/BG_08.png);background-size:100% 100%;float: left; 
 	border-top: 0px solid #01E0F8;
 }
 .mgoo-button-status2{
 	width: 100%; 
 }
 .mgoo-button-status2 div{
-	width: 33.33%;height:100%; background: url(../images/main/images/BG_08.png);background-size:100% 100%;float: left; 
+	height:100%; background: url(../images/main/images/BG_08.png);background-size:100% 100%;float: left; 
 	border-bottom: 0px solid #01E0F8;
 }
 

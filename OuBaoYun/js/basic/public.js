@@ -194,6 +194,9 @@ function MinuteToHour(mi) {
     } if (h > 0) {
         mi += h + "时";
     } if (m > 0) {
+    	if (day>0) {
+    		return mi;
+    	}
         mi += parseFloat(m) + "分";
     }
     return mi;

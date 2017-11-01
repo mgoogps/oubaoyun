@@ -8,6 +8,8 @@ var common = {
 	shache2:{ img:"../images/main/button/weijihuo2.png" },
 	fenceon1:{ img:"../images/main/button/fenceon1.png" },
 	fenceon2:{ img:"../images/main/button/fenceon2.png" }, 
+	power1:{img:""},
+	power2:{img:""},
 	fence:{ GeoFenceID:0, Radius:100},
 	device:{ DeviceID:0, DeviceName:'', SerialNumber:0, Lat:0 ,Lng:0 }
 };
@@ -25,9 +27,7 @@ var common = {
 		document.getElementById('divBtnMonitor').getElementsByTagName("img")[0].src=common.monitor.img;
 		document.getElementById("divBtnHistory").getElementsByTagName("img")[0].src=common.history.img;
 		document.getElementById("divBtnDeviceInfo").getElementsByTagName("img")[0].src=common.deviceinfo.img;
-		
-		
-		
+		 
 		setWindowSize();
 		GetDeviceList();
 	})
@@ -199,6 +199,7 @@ function GetDeviceList () {
 				var html =[];
 				var s = GetStatus(item.Status,item.Speed); 
 				html.push('<a href="javascript:;">')
+  
 				html.push('<img class="mui-media-object mui-pull-left" src="'+s.img+'">')
 				html.push('<div class="mui-media-body mgoo-foot-color-white">')
 				html.push(item.DeviceName +'<span class="mui-hidden">'+MinuteToHour(item.StatusMinute)+'</span>') 
@@ -303,8 +304,6 @@ function SetMainImg (res,StatusTimeInfo) {
  	var battery = csr.getElementsByTagName("span")[0]; //主电
  
 	if(res.DataContext){  
-		
-	 	
 		var context = res.DataContext.split('-'); 
 		if (context[0] == 1) {
 			
@@ -329,11 +328,11 @@ function SetMainImg (res,StatusTimeInfo) {
 			span.innerText ="未刹车";
 			span.className="mgoo-foot-color-gray";  
 			document.getElementById("divDeviceStatus2").getElementsByTagName("img")[0].src = common.shache2.img; 
-		}
-		
+		} 
 		if (context[3] == 1) {
 			battery.innerText ="主电连接"; 
-			if (context[9]) {
+			
+			if (context[9] && context[9]!=0) {
 				battery.innerText +="("+context[9]+"V)";
 			} 
 			battery.className="mgoo-foot-color"; 
@@ -374,7 +373,7 @@ function setWindowSize() {
 	var sliderHeight =document.getElementById("slider").offsetHeight;
 	//var footerHeight = document.getElementById("footer").offsetHeight;
 	var clientHeight = document.body.clientHeight;
-	var buttonsHeight = clientHeight - dcsHeight - sliderHeight  -  subtitleHeight - 13;//headerHeiht - footerHeight -
+	var buttonsHeight = clientHeight - dcsHeight - sliderHeight  -  subtitleHeight - 13 - 25;//headerHeiht - footerHeight -
  
     //if (plus.os.name == "iOS") {
     	// buttonsHeight = buttonsHeight - 50;
@@ -436,8 +435,7 @@ function addGeoFence(callback) {
 		radius : common.fence.Radius,
 		description:''
 	};
-	 
-	console.log(JSON.stringify(data));
+	  
 	a.ajax({
 		url:"/ajax/DevicesAjax.asmx?op=AddGeoFence",
 		data:data,

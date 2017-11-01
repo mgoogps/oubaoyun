@@ -84,9 +84,9 @@
 					/*mui.toast("push click....");
 					mui.alert("click.....");*/ 
 					try{
-						mui.alert("1"+ JSON.stringify(msg)); 
-						mui.alert("2"+msg.payload);
-						mui.alert("3" );
+						//mui.alert("1"+ JSON.stringify(msg)); 
+						//mui.alert("2"+msg.payload);
+						//mui.alert("3" );
 						var msgid = JSON.parse(msg.payload).ExceptionID
 
 						openWindow("monitor/message-view.html",{ExceptionID:msgid});

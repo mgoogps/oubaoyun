@@ -93,13 +93,13 @@ var ajaxPar = function  (way,isloading) {
 						app.login(loginInfo, function(err) { 
 							if (err) {
 								plus.nativeUI.toast("登录信息已失效，请重新登录");
-								mui.openWindow({
+								/*mui.openWindow({
 									url: 'login.html',
 									id: 'login',
 									show: {
 										aniShow: 'pop-in'
 									}
-								});
+								});*/
 								return;
 							}
 							console.log("重新执行ajax..........");
@@ -107,13 +107,13 @@ var ajaxPar = function  (way,isloading) {
 							return;
 						});
 					}else{
- 						mui.openWindow({
+ 						/*mui.openWindow({
 							url: 'login.html',
 							id: 'login',
 							show: {
 								aniShow: 'pop-in'
 							}
-						});
+						});*/
 					}
 				} 
 				if(isloading && window.plus)
